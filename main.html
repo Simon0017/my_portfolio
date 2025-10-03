@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Wekesa - Portfolio</title>
+    <link rel="shortcut icon" href="./static/img/my_logo.jpg" type="image/x-icon">
+    <!-- Swiper CSS -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    
+    <link rel="stylesheet" href="./static/css/portfolio.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="glitch">INITIALIZING...</div>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+        <div class="loading-text">Loading S.W.W Portfolio Systems...</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    
+    <!-- Grid Background -->
+    <div class="grid-bg"></div>
+    
+    <!-- HUD Elements -->
+    <div class="hud-element hud-top-left">
+        STATUS: <span style="color: var(--neon-green);">ONLINE</span><br>
+        VERSION: 2.0.1<br>
+        UPTIME: <span id="uptime">00:00:00</span>
+    </div>
+    
+    <div class="hud-element hud-top-right">
+        COORDINATES: <span id="coordinates">0, 0</span><br>
+        FPS: <span id="fps">60</span><br>
+        PING: <span style="color: var(--neon-green);">12ms</span>
+    </div>
+    
+    <div class="hud-element hud-bottom-left">
+        SYSTEM: <span style="color: var(--neon-blue);">NEXUS OS</span><br>
+        USER: GUEST<br>
+        ACCESS: <span style="color: var(--neon-green);">GRANTED</span>
+    </div>
+    
+    <div class="hud-element hud-bottom-right">
+        TEMP: 72°F<br>
+        LOAD: <span style="color: var(--neon-green);">23%</span><br>
+        MEM: 8.2GB/16GB
+    </div>
+    
+    <!-- Navigation -->
+    <div class="nav">
+        <div class="nav-dot active" data-section="hero"></div>
+        <div class="nav-dot" data-section="about"></div>
+        <div class="nav-dot" data-section="skills"></div>
+        <div class="nav-dot" data-section="projects"></div>
+        <div class="nav-dot" data-section="education"></div>
+        <div class="nav-dot" data-section="achievements"></div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="section hero visible">
+        <div class="container">
+            <div class="hero-content" style="text-align: center;">
+                <h1 class="glitch">SIMON WEKESA</h1>
+                <div class="typing-text" id="typingText"></div>
+            </div>
+            <div class="">
+                <!-- <div class="gallery-info">
+                    <div>NEURAL GALLERY v2.1</div>
+                    <div style="color: var(--neon-blue); margin-top: 5px;">360° VIEW ENABLED</div>
+                </div> -->
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image:url(./static/img/IMG-20250627-WA0007.jpg)">
+                            <div class="info">
+                            <span title="Image">Simon</span>
+                            <span title="Photo">...</span>
+                            <span title="Route">Juja</span>
+                            <span title="Sector">JKUAT</span>
+                            <span title="Zone">Graduation</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(./static/img/IMG-20250627-WA0012.jpg)">
+                            <div class="info">
+                            <span title="Image">Simon</span>
+                            <span title="Photo">...</span>
+                            <span title="Route">Juja</span>
+                            <span title="Sector">JKUAT</span>
+                            <span title="Zone">Graduation</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(./static/img/IMG_9493.JPG.jpg)">
+                            <div class="info">
+                            <span title="Image">Simon</span>
+                            <span title="Photo">...</span>
+                            <span title="Route">Juja</span>
+                            <span title="Sector">JKUAT</span>
+                            <span title="Zone">Graduation</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(./static/img/model_car.jpg);filter: grayscale(50%) blur(10%) sepia(50%);">
+                            <div class="info">
+                            <span title="Image">DDD project</span>
+                            <span title="Photo">Simon</span>
+                            <span title="Route">Juja</span>
+                            <span title="Sector">JKUAT</span>
+                            <span title="Zone">Projects</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(./static/img/ddd.jpg);filter: grayscale(50%)  blur(10%) sepia(50%);">
+                            <div class="info">
+                            <span title="Image">DDD project</span>
+                            <span title="Photo">Simon</span>
+                            <span title="Route">Juja</span>
+                            <span title="Sector">JKUAT</span>
+                            <span title="Zone">Projects</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(./static/img/Snapchat-2072725520.jpg)">
+                            <div class="info">
+                            <span title="Image">Simon</span>
+                            <span title="Photo">...</span>
+                            <span title="Route">>></span>
+                            <span title="Sector">...</span>
+                            <span title="Zone">En Casa</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(./static/img/Snapchat-532598692.jpg)">
+                            <div class="info">
+                            <span title="Image">Simon</span>
+                            <span title="Photo">...</span>
+                            <span title="Route">>></span>
+                            <span title="Sector">...</span>
+                            <span title="Zone">En Casa</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">ABOUT_ME.EXE</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.2rem; line-height: 1.8;">
+                <p style="margin-bottom: 30px; color: rgba(255, 255, 255, 0.9);">
+                    Welcome to my digital realm. My name is Simon Wekesa Wafula, an engineer, programmer and generally a tech enthusiast.
+                    I'm a recent graduate from Jomo Kenyatta University of Technology and Agriculture majoring in Electronic and computer Engineering.
+                    I am proficient in various programming languages from Python,JavaScript to C# and RUST,check out my github or LinkedIn to follow some of the projects i'm working on.
+                </p>
+                <p style="color: rgba(0, 243, 255, 0.8);margin-bottom: 30px;">
+                    My mission is to build systems that are not only edge-cutting but also helpful in people's lives. My projects should tell 
+                    a story of innovation, progress and human-centered design.
+                </p>
+
+                <p style="font-family: 'Orbitron', monospace;color: var(--neon-purple);">Contact: <a href="mailto:wekesawafula15@gmail.com" class="" style="color: var(--neon-green); font-family: 'Orbitron', monospace; font-size: 1.25rem;text-decoration: none;">wekesawafula15@gmail.com</a></p>
+                <p style="font-family: 'Orbitron', monospace;color: var(--neon-purple);">LinkedIn: <a href="https://www.linkedin.com/in/simon-wekesa-81a1b3233/" class="" style="color: var(--neon-blue); font-family: 'Orbitron', monospace; font-size: 1.25rem;text-decoration: none;">Simon Wekesa</a></p>
+                <p style="font-family: 'Orbitron', monospace;color: var(--neon-purple); margin-bottom: 10px;">Github: <a href="https://github.com/Simon0017" class="" style="color: var(--neon-pink); font-family: 'Orbitron', monospace; font-size: 1.25rem;text-decoration: none;">Simon0017</a></p>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">SKILLSET.JSON</h2>
+            <div class="skills-grid">
+                <div class="skill-card neon-border">
+                    <h3 style="color: var(--neon-blue); margin-bottom: 20px; font-family: 'Orbitron', monospace;">Frontend Technologies</h3>
+                    <div>
+                        <span>React</span>
+                        <div class="skill-bar"><div class="skill-progress" data-width="15%"></div></div>
+                    </div>
+                    <div>
+                        <span>JavaScript/TypeScript</span>
+                        <div class="skill-bar"><div class="skill-progress" data-width="65%"></div></div>
+                    </div>
+                    <div>
+                        <span>HTML5/CSS3/SASS</span>
+                        <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card neon-border">
+                    <h3 style="color: var(--neon-pink); margin-bottom: 20px; font-family: 'Orbitron', monospace;">Backend & Database</h3>
+                    <div>
+                        <span>Node.js/Express</span>
+                        <div class="skill-bar"><div class="skill-progress" data-width="20%"></div></div>
+                    </div>
+                    <div>
+                        <span>Python/Django</span>
+                        <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                    </div>
+                    <div>
+                        <span>MongoDB/PostgreSQL</span>
+                        <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card neon-border">
+                    <h3 style="color: var(--neon-green); margin-bottom: 20px; font-family: 'Orbitron', monospace;">AI & Machine Learning</h3>
+                    <div>
+                        <span>TensorFlow/Keras</span>
+                        <div class="skill-bar"><div class="skill-progress" data-width="65%"></div></div>
+                    </div>
+                    <div>
+                        <span>Neural Networks</span>
+                        <div class="skill-bar"><div class="skill-progress" data-width="60%"></div></div>
+                    </div>
+                    <div>
+                        <span>Computer Vision</span>
+                        <div class="skill-bar"><div class="skill-progress" data-width="65%"></div></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card neon-border">
+                    <h3 style="color: var(--neon-purple); margin-bottom: 20px; font-family: 'Orbitron', monospace;">CyberSecurity Security</h3>
+                    <div>
+                        <span>Penetration Testing</span>
+                        <div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div>
+                    </div>
+                    <div>
+                        <span>OSINT</span>
+                        <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
+                    </div>
+                    <div>
+                        <span>Incidence Reporting</span>
+                        <div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div>
+                    </div>
+                    <div>
+                        <span>Threat Intelligence</span>
+                        <div class="skill-bar"><div class="skill-progress" data-width="65%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">PROJECTS.DIR</h2>
+            <div class="projects-grid">
+                <div class="project-card neon-border">
+                    <h3 style="margin-bottom: 15px;"><a style="text-decoration: none;color: var(--neon-blue); font-family: 'Orbitron', monospace; margin-bottom: 15px;" href="https://vestarealty.onrender.com/dashboard">Vesta Realty</a></h3>
+                    <p style="margin-bottom: 20px; color: rgba(255, 255, 255, 0.8);">
+                        Web application that enables real-estate owners and tenants to: access rental payment history, generate receipts ,raise and address  rent-related complaints, view balances and bill tenants.
+                    </p>
+                    <div style="margin-bottom: 15px;display: flex;flex-wrap: wrap;">
+                        <span style="background: rgba(245, 164, 13, 0.829); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">HTML/CSS</span>
+                        <span style="background: rgba(255, 187, 0, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">JavaScript</span>
+                        <span style="background: rgba(255, 0, 110, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">Django</span>
+                        <span style="background: rgba(57, 255, 20, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">PostgreSQL</span>
+                    </div>
+                    <div style="color: var(--neon-green); font-family: 'Orbitron', monospace;">STATUS: DEPLOYED</div>
+                </div> 
+                
+                <div class="project-card neon-border">
+                    <h3 style="color: var(--neon-pink); font-family: 'Orbitron', monospace; margin-bottom: 15px;">CampusVibes</h3>
+                    <p style="margin-bottom: 20px; color: rgba(255, 255, 255, 0.8);">
+                        Web application built on Django and various python and js libraries that aims to connect and stucturize student lives in campus. Its not all about work, there is socialzing and business also 
+                        integrated in this application. Comes with 3 applications ie the users,staff and the analytics. Fast,efficient and secure.
+                    </p>
+                    <div style="margin-bottom: 15px;display: flex;flex-wrap: wrap;gap: 4px;">
+                        <span style="background: rgba(191, 0, 255, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">Django</span>
+                        <span style="background: rgba(0, 243, 255, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">JavaScript</span>
+                        <span style="background: rgba(57, 255, 20, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">Celery</span>
+                        <span style="background: rgba(20, 255, 243, 0.856); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">PostgreSQL</span>
+                        <span style="background: rgba(179, 22, 165, 0.692); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">🔐 E2EE Encryption</span>
+                        <span style="background: rgba(31, 143, 218, 0.726); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">🎥 MediaSoup</span>
+                    </div>
+                    <div style="color: var(--neon-green); font-family: 'Orbitron', monospace;">STATUS: BETA</div>
+                </div>
+                
+                <div class="project-card neon-border">
+                    <h3 style="color: var(--neon-green); font-family: 'Orbitron', monospace; margin-bottom: 15px;">Drowsy Driver Detection</h3>
+                    <p style="margin-bottom: 20px; color: rgba(255, 255, 255, 0.8);">
+                        AI (computer vision) powered project that seeks to address road accidents by detecting drowsiness in drivers
+                        via dashboard cams, ai models and relaying actions via multiple streams. 
+                    </p>
+                    <div style="margin-bottom: 15px;display: flex;flex-wrap: wrap;gap: 4px;">
+                        <span style="background: rgba(0, 243, 255, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">Keras</span>
+                        <span style="background: rgba(57, 255, 20, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">MediaPipe</span>
+                        <span style="background: rgba(48, 50, 206, 0.884); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">Opencv2</span>
+                        <span style="background: rgba(27, 5, 88, 0.397); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">ESP32</span>
+                        <span style="background: rgba(145, 19, 3, 0.692); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">Web Sockets</span>
+                    </div>
+                    <div style="color: var(--neon-green); font-family: 'Orbitron', monospace;">STATUS: PRESENTED</div>
+                </div>
+                
+                <div class="project-card neon-border">
+                    <h3 style="color: var(--neon-purple); font-family: 'Orbitron', monospace; margin-bottom: 15px;">ODIN Web Crawler</h3>
+                    <p style="margin-bottom: 20px; color: rgba(255, 255, 255, 0.8);">
+                        Powerful crawler powered and supported by python libraries ie: scrapy,beautifulSoup,requests that indexes websites on customers request.
+                    </p>
+                    <div style="margin-bottom: 15px;">
+                        <span style="background: rgba(191, 0, 255, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">Scrapy</span>
+                        <span style="background: rgba(0, 243, 255, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">Django</span>
+                        <span style="background: rgba(57, 255, 20, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">PostgreSQL </span>
+                    </div>
+                    <div style="color: var(--neon-green); font-family: 'Orbitron', monospace;">STATUS: PRE-ALPHA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">EDUCATION.LOG</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="skill-card neon-border" style="margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                        <div>
+                            <h3 style="color: var(--neon-blue); font-family: 'Orbitron', monospace;">BSc Electronic & Computer Engineering</h3>
+                            <p style="color: var(--neon-green); font-size: 1.1rem;">JKUAT - Jomo Kenyatta University of Agriculture & Technology </p>
+                        </div>
+                        <span style="color: rgba(255, 255, 255, 0.6); font-family: 'Orbitron', monospace;">2019-2025</span>
+                    </div>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+                        Completed a bachelors of science degree in Electronic and Computer Engineering. <br>Final Project: Driver drowsiness detection. 
+                        <br><strong style="color: var(--neon-green);">Honors: Second Class, Upper Division </strong>
+                    </p>
+                </div>
+                
+                <div class="skill-card neon-border" style="margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                        <div>
+                            <h3 style="color: var(--neon-pink); font-family: 'Orbitron', monospace;">Kenya Certificate of Secondary Education</h3>
+                            <p style="color: var(--neon-green); font-size: 1.1rem;">Alliance High School</p>
+                        </div>
+                        <span style="color: rgba(255, 255, 255, 0.6); font-family: 'Orbitron', monospace;">2015-2018</span>
+                    </div>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+                        Attended and Completed High School in Alliance High School, Kikuyu.
+                        <br><strong style="color: var(--neon-green);">A-</strong>
+                    </p>
+                </div>
+                
+                <!-- <div class="skill-card neon-border">
+                    <h3 style="color: var(--neon-purple); font-family: 'Orbitron', monospace; margin-bottom: 15px;">Certifications & Training</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                        <div>
+                            <span style="color: var(--neon-blue);">▸</span> AWS Solutions Architect Professional
+                        </div>
+                        <div>
+                            <span style="color: var(--neon-blue);">▸</span> Certified Ethical Hacker (CEH)
+                        </div>
+                        <div>
+                            <span style="color: var(--neon-blue);">▸</span> Google Cloud AI/ML Specialist
+                        </div>
+                        <div>
+                            <span style="color: var(--neon-blue);">▸</span> CISSP Security Professional
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <div class="container">
+            <h2 class="section-title">ACHIEVEMENTS.DB</h2>
+            <div style="text-align: center; max-width: 900px; margin: 0 auto;">
+                <div style="margin-bottom: 50px;">
+                    <h3 style="color: var(--neon-green); font-family: 'Orbitron', monospace; margin-bottom: 30px; font-size: 1.5rem;">Recognition & Awards</h3>
+                    <div class="achievement-badge">Cisco Introduction to CyberSecurity</div>
+                    <div class="achievement-badge">TryHackMe Offensive Security Intro</div>
+                    <div class="achievement-badge">TryHackMe Blue</div>
+                    <div class="achievement-badge">TryHackMe Vulnversity</div>
+                </div>
+
+                <div style="margin-bottom: 50px;">
+                    <h3 style="color: var(--neon-blue); font-family: 'Orbitron', monospace; margin-bottom: 30px; font-size: 1.5rem;">Tech Stack</h3>
+                    <div class="achievement-badge">Python</div>
+                    <div class="achievement-badge">JavaScript</div>
+                    <div class="achievement-badge">Java</div>
+                    <div class="achievement-badge">C#</div>
+                    <div class="achievement-badge">Rust</div>
+                    <div class="achievement-badge">CSS</div>
+                    <div class="achievement-badge">Matlab</div>
+                    <div class="achievement-badge">Linux CLI</div>
+                    <div class="achievement-badge">HTML</div>
+                </div>
+                
+                <!-- <div style="margin-bottom: 50px;">
+                    <h3 style="color: var(--neon-pink); font-family: 'Orbitron', monospace; margin-bottom: 30px; font-size: 1.5rem;">Open Source Contributions</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                        <div class="skill-card">
+                            <h4 style="color: var(--neon-blue);">TensorFlow</h4>
+                            <p>Core contributor to ML optimization modules</p>
+                            <span style="color: var(--neon-green); font-family: 'Orbitron', monospace;">+2.4k commits</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4 style="color: var(--neon-blue);">React</h4>
+                            <p>Performance optimization and accessibility features</p>
+                            <span style="color: var(--neon-green); font-family: 'Orbitron', monospace;">+1.8k commits</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4 style="color: var(--neon-blue);">Node.js</h4>
+                            <p>Security patches and crypto module enhancements</p>
+                            <span style="color: var(--neon-green); font-family: 'Orbitron', monospace;">+967 commits</span>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <div>
+                    <h3 style="color: var(--neon-purple); font-family: 'Orbitron', monospace; margin-bottom: 30px; font-size: 1.5rem;">Stats & Metrics</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                        <div class="neon-border" style="padding: 20px; text-align: center;">
+                            <div style="font-size: 2rem; color: var(--neon-green); font-family: 'Orbitron', monospace;">4</div>
+                            <div>Projects Completed</div>
+                        </div>
+                        <div class="neon-border" style="padding: 20px; text-align: center;">
+                            <div style="font-size: 2rem; color: var(--neon-blue); font-family: 'Orbitron', monospace;">30k+</div>
+                            <div>Lines of Code</div>
+                        </div>
+                        <div class="neon-border" style="padding: 20px; text-align: center;">
+                            <div style="font-size: 2rem; color: var(--neon-pink); font-family: 'Orbitron', monospace;">1</div>
+                            <div>Happy Clients</div>
+                        </div>
+                        <div class="neon-border" style="padding: 20px; text-align: center;">
+                            <div style="font-size: 2rem; color: var(--neon-purple); font-family: 'Orbitron', monospace;">24/7</div>
+                            <div>System Uptime</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio elements for HUD sounds -->
+    <audio id="hoverSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+Dtm2YeAzKH0e/PgS0EInLA7+OWRAoTVqzn77BdGAg+ltryxnkpBSl+zPLaizsIGGS57+OdTgwOUarm7LNiFgs8iM/v" type="audio/wav">
+    </audio>
+    
+    <audio id="clickSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm1QIBAAAAABAAEAQBsAAEAbAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBji7cctSP4cVLZkJqoUtjy+R1QWWGwVTCQEuElgCdANKmJ4OmCq6GCVLRD1dAFg2DAYBEQISFqhZQkjfKI5M4Oo2AX" type="audio/wav">
+    </audio>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./static/js/portfolio.js"></script>
+</html>
