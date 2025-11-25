@@ -5,7 +5,7 @@ const typingTexts = [
     "Full Stack Developer", 
     "Cybersecurity Enthusiast",
     "Computer Vision amatuer",
-    "Embedded Systems Enthusiast",
+    "Embedded Systems amatuer",
     "ML & DL amateur"
 ];
 let typingIndex = 0;
