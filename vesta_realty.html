@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project | Vesta Realty</title>
+    <link rel="shortcut icon" href="./static/img/my_logo.jpg" type="image/x-icon">
+    <!-- Swiper CSS -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="./static/css/portfolio.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    
+    <!-- Grid Background -->
+    <div class="grid-bg"></div>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn">
+        <span>←</span> BACK
+    </a>
+
+    <!-- Hero Section -->
+    <section class="project-hero">
+        <div class="hero-content-wrapper">
+            <h1 class="project-title glitch">VESTA REALTY</h1>
+            <p class="project-tagline glitch">Real Estate Management System</p>
+            <div class="project-meta-bar">
+                <div class="achievement-badge">
+                    <span class="meta-icon">📅</span>
+                    <span>2025</span>
+                </div>
+                <div class="achievement-badge">
+                    <span class="meta-icon">⚡</span>
+                    <span>BETA DEPLOY</span>
+                </div>
+                <div class="achievement-badge">
+                    <span class="meta-icon">👤</span>
+                    <span>Solo Project</span>
+                </div>
+                <div class="achievement-badge">
+                    <span class="meta-icon">🏢</span>
+                    <span>Web Application</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="project-content">
+        
+        <!-- Project Banner -->
+        <div class="project-banner">
+            <img src="./static/img/vesta_homepage.png" alt="Vesta Realty Banner" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22500%22%3E%3Crect fill=%22%23111%22 width=%221200%22 height=%22500%22/%3E%3Ctext fill=%22%2300f3ff%22 font-family=%22monospace%22 font-size=%2248%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22%3EPROJECT BANNER%3C/text%3E%3C/svg%3E'">
+        </div>
+
+        <!-- Overview Section -->
+        <div class="paragraph-section">
+            <h2 class="section-title"  style="font-size: 2em;">PROJECT_OVERVIEW.EXE</h2>
+            <p class="description-text">
+                Vesta Realty is a comprehensive web application designed to streamline real estate management. 
+                The platform enables property owners and tenants to efficiently manage rental payments, generate receipts, 
+                raise and address rent-related complaints, view account balances, and handle billing operations. 
+                Built with modern technologies, it provides a secure and user-friendly interface for all stakeholders.
+            </p>
+            <p class="description-text">
+                The system features real-time notifications, automated billing cycles, comprehensive reporting tools, 
+                and a responsive design that works seamlessly across all devices. Security and data integrity are 
+                prioritized with secure authentication mechanisms, protection against SQL injection attacks and cross site forgery attacks.
+            </p>
+            <p class="description-text">
+                Future improvements and additions to the platform include an integrated dispute system, more payment channels/methods , push notifications , email notifications ,google/apple auth login system, advanced analytics and tenant database system. Reach out for any ideas or recommendations.
+            </p>
+        </div>
+
+        <!-- Tech Stack Section -->
+        <div class="content-section">
+            <h2 class="section-title"  style="font-size: 2em;">TECH_STACK.JSON</h2>
+            <div class="tech-stack-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">dj</div>
+                    <div>Django</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🐘</div>
+                    <div>PostgreSQL</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">⚡</div>
+                    <div>JavaScript</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🎨</div>
+                    <div>HTML/CSS</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">✨</div>
+                    <div>TAILWINDCSS</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">☁️</div>
+                    <div>Render</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="content-section">
+            <h2 class="section-title"  style="font-size: 2em;">KEY_FEATURES</h2>
+            <div class="features-grid">
+                <div class="project-card neon-border">
+                    <div class="feature-icon">💳</div>
+                    <h3 class="feature-title">Payment Management</h3>
+                    <p class="feature-description">
+                        Track and manage rental payments with automated receipt generation. 
+                        View complete payment history and outstanding balances in real-time.
+                    </p>
+                </div>
+                <div class="project-card neon-border">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Analytics Dashboard</h3>
+                    <p class="feature-description">
+                        Comprehensive analytics for property owners with revenue tracking, 
+                        occupancy rates, and financial reports.
+                    </p>
+                </div>
+                <div class="project-card neon-border">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Responsive Design</h3>
+                    <p class="feature-description">
+                        Fully responsive interface that works seamlessly on desktop, tablet, 
+                        and mobile devices.
+                    </p>
+                </div>
+                <div class="project-card neon-border">
+                    <div class="feature-icon">🔐</div>
+                    <h3 class="feature-title">Secure Authentication</h3>
+                    <p class="feature-description">
+                        Uses Django internal auth system with sessions to enable users to maintain sessions while also maintaining data served is the correct one.Cross Site forgery
+                        Attacks is also managed suring post request making data transmission secure.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screenshots Gallery -->
+        <div class="content-section">
+            <h2 class="section-title" style="font-size: 2em;">SCREENSHOTS.JPG</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <img 
+                            src="static/img/vesta_homepage.png"
+                            data-src="static/img/vesta_homepage.png" 
+                            class="swiper-lazy" 
+                            alt="loginpage"
+                        >
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img 
+                            src="static/img/vesta_tenants.png"
+                            data-src="static/img/vesta_tenants.png" 
+                            class="swiper-lazy" 
+                            alt="tenants"
+                        >
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img 
+                            src="static/img/vesta_invoice.png"
+                            data-src="static/img/vesta_invoice.png" 
+                            class="swiper-lazy" 
+                            alt="tenants"
+                        >
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img 
+                            src="static/img/vesta_props.png"
+                            data-src="static/img/vesta_props.png" 
+                            class="swiper-lazy" 
+                            alt="tenants"
+                        >
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Code Example (Optional) -->
+        <div class="content-section">
+            <h2 class="section-title" style="font-size: 2em;">CODE_HIGHLIGHT.LOG</h2>
+            <p class="description-text" style="font-size: 1rem;">
+                Here's a snippet showcasing the payment processing logic:
+            </p>
+            <div class="code-snippet">
+                <pre>
+                    # func to do the stk push
+                    def stk_push(phone, amount, account_reference, callback_url,shortcode,transaction_type="CustomerPayBillOnline"):
+                        if not shortcode:
+                            return
+                        access_token = get_access_token()
+                        url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
+                        
+                        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+                        password = base64.b64encode(f"{settings.MPESA_SHORTCODE}{settings.MPESA_PASSKEY}{timestamp}".encode()).decode()
+                        
+                        headers = {"Authorization": f"Bearer {access_token}", "Content-Type": "application/json"}
+                        payload = {
+                            "BusinessShortCode": shortcode,
+                            "Password": password,
+                            "Timestamp": timestamp,
+                            "TransactionType": transaction_type,
+                            "Amount": validate_amount(amount),
+                            "PartyA": validate_possible_number(phone,"Kenya").as_e164[1:],
+                            "PartyB": settings.MPESA_SHORTCODE,
+                            "PhoneNumber": phone,
+                            "CallBackURL": callback_url,
+                            "AccountReference": validate_reference(account_reference),
+                            "TransactionDesc": "Payment to landlord"
+                        }
+                        
+                        response = requests.post(url, json=payload, headers=headers)
+                        return response.json()
+                </pre>
+            </div>
+        </div>
+
+        <!-- Project Stats -->
+        <div class="content-section">
+            <h2 class="section-title"  style="font-size: 2em;">PROJECT_STATISTICS.PY</h2>
+            <div class="stats-container">
+                <div class="achievement-badge neon-border" style="padding: 20px;">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Lines of Code</div>
+                </div>
+                <div class="achievement-badge neon-border" style="padding: 20px;">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="achievement-badge neon-border" style="padding: 20px;">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Features</div>
+                </div>
+                <div class="achievement-badge neon-border" style="padding: 20px;">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Challenges & Solutions -->
+        <div class="content-section">
+            <h2 class="section-title"  style="font-size: 2em;">CHALLENGES_&_SOLUTIONS</h2>
+            <ul class="challenges-list">
+                <li>
+                    <strong style="color: var(--neon-pink);">Challenge:</strong> MPESA Integration 
+                    <br>
+                    <strong style="color: var(--neon-green);">Solution:</strong>Still fixing.
+                </li>
+                <li>
+                    <strong style="color: var(--neon-pink);">Challenge:</strong> Phone Number Validation
+                    <br>
+                    <strong style="color: var(--neon-green);">Solution:</strong> Used already available python library  to handle the validation.
+                </li>
+                <li>
+                    <strong style="color: var(--neon-pink);">Challenge:</strong> Deployment
+                    <br>
+                    <strong style="color: var(--neon-green);">Solution:</strong> Render.com provided an easier deployment which enables the project to go into production albeit minor challenges.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Project Links -->
+        <div class="content-section">
+            <h2 class="section-title"  style="font-size: 2em;">EXPLORE_PROJECT</h2>
+            <div class="project-links-section">
+                <a href="https://vestarealty.onrender.com" class="project-link-btn primary" target="_blank">
+                    <span>🚀</span> LIVE DEMO
+                </a>
+                <a href="https://github.com/Simon0017/VestaRealty" class="project-link-btn" target="_blank">
+                    <span>📂</span> VIEW SOURCE
+                </a>
+                <a href="index.html#projects" class="project-link-btn">
+                    <span>📋</span> ALL PROJECTS
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="static/js/project.js"></script>
+</html>
