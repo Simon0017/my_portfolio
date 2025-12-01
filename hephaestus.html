@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project | Vesta Realty</title>
+    <title>Project | Hephaestus Motor Inc</title>
     <link rel="shortcut icon" href="./static/img/my_logo.jpg" type="image/x-icon">
     <!-- Swiper CSS -->
     <link
@@ -28,8 +28,8 @@
     <!-- Hero Section -->
     <section class="project-hero">
         <div class="hero-content-wrapper">
-            <h1 class="project-title glitch">VESTA REALTY</h1>
-            <p class="project-tagline glitch">Real Estate Management System</p>
+            <h1 class="project-title glitch" style="color: var(--neon-green);">Hephaestus Motor Inc</h1>
+            <p class="project-tagline glitch" style="color: var(--neon-pink);">Utility Billing System</p>
             <div class="project-meta-bar">
                 <div class="achievement-badge">
                     <span class="meta-icon">📅</span>
@@ -37,11 +37,15 @@
                 </div>
                 <div class="achievement-badge">
                     <span class="meta-icon">⚡</span>
-                    <span>BETA DEPLOY</span>
+                    <span>Local Development</span>
                 </div>
                 <div class="achievement-badge">
                     <span class="meta-icon">👤</span>
                     <span>Solo Project</span>
+                </div>
+                <div class="achievement-badge">
+                    <span class="meta-icon">🦀</span>
+                    <span>RUST</span>
                 </div>
                 <div class="achievement-badge">
                     <span class="meta-icon">🏢</span>
@@ -56,25 +60,24 @@
         
         <!-- Project Banner -->
         <div class="project-banner">
-            <img src="./static/img/vesta_homepage.png" alt="Vesta Realty Banner" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22500%22%3E%3Crect fill=%22%23111%22 width=%221200%22 height=%22500%22/%3E%3Ctext fill=%22%2300f3ff%22 font-family=%22monospace%22 font-size=%2248%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22%3EPROJECT BANNER%3C/text%3E%3C/svg%3E'">
+            <img src="./static/img/hephaestus_banner.png" alt="Hephaestus Banner" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22500%22%3E%3Crect fill=%22%23111%22 width=%221200%22 height=%22500%22/%3E%3Ctext fill=%22%2300f3ff%22 font-family=%22monospace%22 font-size=%2248%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22%3EPROJECT BANNER%3C/text%3E%3C/svg%3E'">
         </div>
 
         <!-- Overview Section -->
         <div class="paragraph-section">
             <h2 class="section-title"  style="font-size: 2em;">PROJECT_OVERVIEW.EXE</h2>
             <p class="description-text">
-                Vesta Realty is a comprehensive web application designed to streamline real estate management. 
-                The platform enables property owners and tenants to efficiently manage rental payments, generate receipts, 
-                raise and address rent-related complaints, view account balances, and handle billing operations. 
-                Built with modern technologies, it provides a secure and user-friendly interface for all stakeholders.
+                Hephaestus Motor Inc is a project that was created as a means to master the 
+                Rust Language. As one of the things that rust can do, web development is one of them. Through 
+                crates like Axum,tower and tokio, I was able to create a web apllication that uses rust as the backend language
+                and (HTML5,JavaScript and CSS) as the frontend.
             </p>
+
             <p class="description-text">
-                The system features real-time notifications, automated billing cycles, comprehensive reporting tools, 
-                and a responsive design that works seamlessly across all devices. Security and data integrity are 
-                prioritized with secure authentication mechanisms, protection against SQL injection attacks and cross site forgery attacks.
-            </p>
-            <p class="description-text">
-                Future improvements and additions to the platform include an integrated dispute system, more payment channels/methods , push notifications , email notifications ,google/apple auth login system, advanced analytics and tenant database system. Reach out for any ideas or recommendations.
+                About Hephaestus Motor Inc:Hephaestus Motor Inc is a virtual company I imagined that supplies
+                mainly electricity with a customer base of 5M+ customers.
+                This digital billing system is aimed to easen up the payment process of the customers plus they have access to their payment and meter history.
+                The system provides smart metering, billing automation.
             </p>
         </div>
 
@@ -83,8 +86,8 @@
             <h2 class="section-title"  style="font-size: 2em;">TECH_STACK.JSON</h2>
             <div class="tech-stack-grid">
                 <div class="tech-item">
-                    <div class="tech-icon">dj</div>
-                    <div>Django</div>
+                    <div class="tech-icon">🦀</div>
+                    <div>Rust</div>
                 </div>
                 <div class="tech-item">
                     <div class="tech-icon">🐘</div>
@@ -103,30 +106,32 @@
                     <div>TAILWINDCSS</div>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">☁️</div>
-                    <div>Render</div>
+                    <div class="tech-icon">🌊</div>
+                    <div>Sea-ORM</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">📃</div>
+                    <div>Tera</div>
                 </div>
             </div>
         </div>
 
         <!-- Features Section -->
         <div class="content-section">
-            <h2 class="section-title"  style="font-size: 2em;">KEY_FEATURES.LOG</h2>
+            <h2 class="section-title"  style="font-size: 2em;">KEY_FEATURES</h2>
             <div class="features-grid">
                 <div class="project-card neon-border">
                     <div class="feature-icon">💳</div>
-                    <h3 class="feature-title">Payment Management</h3>
+                    <h3 class="feature-title">Automatic Billing system</h3>
                     <p class="feature-description">
-                        Track and manage rental payments with automated receipt generation. 
-                        View complete payment history and outstanding balances in real-time.
+                        Compute billing from usage data with defined tariffs.
                     </p>
                 </div>
                 <div class="project-card neon-border">
                     <div class="feature-icon">📊</div>
-                    <h3 class="feature-title">Analytics Dashboard</h3>
+                    <h3 class="feature-title">Usage Analytics</h3>
                     <p class="feature-description">
-                        Comprehensive analytics for property owners with revenue tracking, 
-                        occupancy rates, and financial reports.
+                        Tera-powered dashboard for consumption visualization.
                     </p>
                 </div>
                 <div class="project-card neon-border">
@@ -138,11 +143,17 @@
                     </p>
                 </div>
                 <div class="project-card neon-border">
-                    <div class="feature-icon">🔐</div>
-                    <h3 class="feature-title">Secure Authentication</h3>
+                    <div class="feature-icon">♻</div>
+                    <h3 class="feature-title">Modular Architecture</h3>
                     <p class="feature-description">
-                        Uses Django internal auth system with sessions to enable users to maintain sessions while also maintaining data served is the correct one.Cross Site forgery
-                        Attacks is also managed suring post request making data transmission secure.
+                       Clean separation between routes, services, and models.
+                    </p>
+                </div>
+                <div class="project-card neon-border">
+                    <div class="feature-icon">🧾</div>
+                    <h3 class="feature-title">Invoice Management</h3>
+                    <p class="feature-description">
+                       Generate and store bills with timestamps and totals
                     </p>
                 </div>
             </div>
@@ -156,8 +167,8 @@
 
                     <div class="swiper-slide">
                         <img 
-                            src="static/img/vesta_homepage.png"
-                            data-src="static/img/vesta_homepage.png" 
+                            src="static/img/hepha_cus_portal_1.png"
+                            data-src="static/img/hepha_cus_portal_1.png" 
                             class="swiper-lazy" 
                             alt="loginpage"
                         >
@@ -165,8 +176,8 @@
 
                     <div class="swiper-slide">
                         <img 
-                            src="static/img/vesta_tenants.png"
-                            data-src="static/img/vesta_tenants.png" 
+                            src="static/img/hepha_cus_portal_2.png"
+                            data-src="static/img/hepha_cus_portal_2.png" 
                             class="swiper-lazy" 
                             alt="tenants"
                         >
@@ -174,8 +185,8 @@
 
                     <div class="swiper-slide">
                         <img 
-                            src="static/img/vesta_invoice.png"
-                            data-src="static/img/vesta_invoice.png" 
+                            src="static/img/hepha_cus_portal_3.png"
+                            data-src="static/img/hepha_cus_portal_3.png"
                             class="swiper-lazy" 
                             alt="tenants"
                         >
@@ -183,8 +194,17 @@
 
                     <div class="swiper-slide">
                         <img 
-                            src="static/img/vesta_props.png"
-                            data-src="static/img/vesta_props.png" 
+                            src="static/img/hepha_portal_1.png"
+                            data-src="static/img/hepha_portal_1.png"
+                            class="swiper-lazy" 
+                            alt="tenants"
+                        >
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img 
+                            src="static/img/hepha_portal_2.png"
+                            data-src="static/img/hepha_portal_2.png"
                             class="swiper-lazy" 
                             alt="tenants"
                         >
@@ -194,41 +214,44 @@
             </div>
         </div>
 
-        <!-- Code Example -->
+        <!-- Code Example (Optional) -->
         <div class="content-section">
-            <h2 class="section-title" style="font-size: 2em;">CODE_HIGHLIGHT.PY</h2>
+            <h2 class="section-title" style="font-size: 2em;">CODE_HIGHLIGHT.TOML</h2>
             <p class="description-text" style="font-size: 1rem;">
-                Here's a snippet showcasing the payment processing logic:
+                Here's a snippet of the toml file:
             </p>
             <div class="code-snippet">
                 <pre>
-                    # func to do the stk push
-                    def stk_push(phone, amount, account_reference, callback_url,shortcode,transaction_type="CustomerPayBillOnline"):
-                        if not shortcode:
-                            return
-                        access_token = get_access_token()
-                        url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
-                        
-                        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-                        password = base64.b64encode(f"{settings.MPESA_SHORTCODE}{settings.MPESA_PASSKEY}{timestamp}".encode()).decode()
-                        
-                        headers = {"Authorization": f"Bearer {access_token}", "Content-Type": "application/json"}
-                        payload = {
-                            "BusinessShortCode": shortcode,
-                            "Password": password,
-                            "Timestamp": timestamp,
-                            "TransactionType": transaction_type,
-                            "Amount": validate_amount(amount),
-                            "PartyA": validate_possible_number(phone,"Kenya").as_e164[1:],
-                            "PartyB": settings.MPESA_SHORTCODE,
-                            "PhoneNumber": phone,
-                            "CallBackURL": callback_url,
-                            "AccountReference": validate_reference(account_reference),
-                            "TransactionDesc": "Payment to landlord"
-                        }
-                        
-                        response = requests.post(url, json=payload, headers=headers)
-                        return response.json()
+                    [package]
+                    name = "utility_billing_system"
+                    version = "0.1.0"
+                    edition = "2024"
+
+                    [dependencies]
+                    # orm
+                    sea-orm = { version = "2.0.0-rc", features = [ "sqlx-postgres", "runtime-tokio-rustls", "macros" ] }
+                    # async operations
+                    tokio = { version = "1.48.0", features = ["full"] }
+                    # env variables
+                    dotenvy = "0.15"
+                    # web framework
+                    axum = {version = "0.8.6",features = ["macros","json"]}
+                    # json handling
+                    serde ={ version = "1.0.228",features = ["derive"]}
+                    serde_json = "1.0.145"
+                    # logging
+                    tracing-subscriber = {version = "0.3.20",features = ["fmt","env-filter"]}
+                    tracing = "0.1.41"
+                    # middleware
+                    tower = { version = "0.5.1", features = ["full"] }
+                    tower-http = {version = "0.6.6",features = ["cors","trace","compression-full","auth","fs"]}
+                    # template handling with tera
+                    tera = "1.20.0"
+                    once_cell = "1.21.3" # make tera global
+                    # chrono for time
+                    chrono = { version = "0.4.42", features = ["serde"] }
+                    rust_decimal = "=1.39.0"
+
                 </pre>
             </div>
         </div>
@@ -238,20 +261,12 @@
             <h2 class="section-title"  style="font-size: 2em;">PROJECT_STATISTICS.JSON</h2>
             <div class="stats-container">
                 <div class="achievement-badge neon-border" style="padding: 20px;">
-                    <div class="stat-number">2K+</div>
+                    <div class="stat-number">1K+</div>
                     <div class="stat-label">Lines of Code</div>
-                </div>
-                <div class="achievement-badge neon-border" style="padding: 20px;">
-                    <div class="stat-number">1</div>
-                    <div class="stat-label">Happy Clients</div>
                 </div>
                 <div class="achievement-badge neon-border" style="padding: 20px;">
                     <div class="stat-number">10+</div>
                     <div class="stat-label">Features</div>
-                </div>
-                <div class="achievement-badge neon-border" style="padding: 20px;">
-                    <div class="stat-number">99.9%</div>
-                    <div class="stat-label">Uptime</div>
                 </div>
             </div>
         </div>
@@ -261,19 +276,19 @@
             <h2 class="section-title"  style="font-size: 2em;">CHALLENGES_&_SOLUTIONS</h2>
             <ul class="challenges-list">
                 <li>
-                    <strong style="color: var(--neon-pink);">Challenge:</strong> MPESA Integration 
+                    <strong style="color: var(--neon-pink);">Challenge:</strong> Sharing of database conncetion across multiple methods. 
                     <br>
-                    <strong style="color: var(--neon-green);">Solution:</strong>Still fixing.
+                    <strong style="color: var(--neon-green);">Solution:</strong> Used Arc for shared ownership.
                 </li>
                 <li>
-                    <strong style="color: var(--neon-pink);">Challenge:</strong> Phone Number Validation
+                    <strong style="color: var(--neon-pink);">Challenge:</strong> Serving static files
                     <br>
-                    <strong style="color: var(--neon-green);">Solution:</strong> Used already available python library  to handle the validation.
+                    <strong style="color: var(--neon-green);">Solution:</strong> Axum is not a framework like django so serving static files is done using another crate and module.<br>I used ServeDir service from tower-http crate in this case.
                 </li>
                 <li>
-                    <strong style="color: var(--neon-pink);">Challenge:</strong> Deployment
+                    <strong style="color: var(--neon-pink);">Challenge:</strong> Slow building speed
                     <br>
-                    <strong style="color: var(--neon-green);">Solution:</strong> Render.com provided an easier deployment which enables the project to go into production albeit minor challenges.
+                    <strong style="color: var(--neon-green);">Solution:</strong> Rust slow building is notorious but i managed it using workspace,cargo-watch and sccache.
                 </li>
             </ul>
         </div>
@@ -282,10 +297,7 @@
         <div class="content-section">
             <h2 class="section-title"  style="font-size: 2em;">EXPLORE_PROJECT</h2>
             <div class="project-links-section">
-                <a href="https://vestarealty.onrender.com" class="project-link-btn primary" target="_blank">
-                    <span>🚀</span> LIVE DEMO
-                </a>
-                <a href="https://github.com/Simon0017/VestaRealty" class="project-link-btn" target="_blank">
+                <a href="https://github.com/Simon0017/Utility-billing-system" class="project-link-btn" target="_blank">
                     <span>📂</span> VIEW SOURCE
                 </a>
                 <a href="index.html#projects" class="project-link-btn">
