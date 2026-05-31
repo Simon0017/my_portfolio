@@ -1,494 +1,536 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simon Wekesa - Portfolio</title>
-    <link rel="shortcut icon" href="./static/img/my_logo.jpg" type="image/x-icon">
-    <!-- Swiper CSS -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    
-    <link rel="stylesheet" href="./static/css/portfolio.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Simon Wekesa — Electronics & Computer Engineer. Backend, Embedded Systems, Distributed Architecture, AI Infrastructure." />
+  <meta name="author" content="Simon Wekesa" />
+  <meta property="og:title"       content="Simon Wekesa — Electronics & Computer Engineer" />
+  <meta property="og:description" content="Engineering complex systems at the intersection of backend infrastructure, embedded hardware, and distributed AI." />
+  <meta property="og:type"        content="website" />
+
+  <title>Simon Wekesa - Electronics & Computer Engineer</title>
+
+  <!-- Theme pre-set: prevents flash on load -->
+  <script>
+    (function(){
+      var s = localStorage.getItem('ep-theme');
+      var sys = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      if ((s || sys) === 'light') document.documentElement.setAttribute('data-theme','light');
+    })();
+  </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/main.css" />
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="img/alt.png" type="image/x-icon">
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="glitch">INITIALIZING...</div>
-        <div class="loading-bar">
-            <div class="loading-progress"></div>
-        </div>
-        <div class="loading-text">Loading S.W.W Portfolio Systems...</div>
+
+  <!-- ============================================================
+       CUSTOM CURSOR
+       ============================================================ -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <!-- ============================================================
+       PRELOADER
+       ============================================================ -->
+  <div id="preloader" role="status" aria-label="Loading">
+    <div class="preloader__logo">S.Wekesa</div>
+    <div class="preloader__bar">
+      <div class="preloader__fill"></div>
+    </div>
+    <div class="preloader__status">Initializing systems...</div>
+  </div>
+
+  <!-- ============================================================
+       SCROLL PROGRESS
+       ============================================================ -->
+  <div id="progress-bar" role="progressbar" aria-label="Scroll progress"></div>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav id="nav" aria-label="Main navigation">
+    <a href="#hero" class="nav__logo" aria-label="Home">
+      <span class="nav__logo-bracket">[</span>
+      S.Wekesa
+      <span class="nav__logo-bracket">]</span>
+    </a>
+
+    <div class="nav__links">
+      <a href="#about"    class="nav__link">About</a>
+      <a href="#domains"  class="nav__link">Domains</a>
+      <a href="#stack"    class="nav__link">Stack</a>
+      <a href="#timeline-section" class="nav__link">Journey</a>
+      <a href="#projects" class="nav__link">Projects</a>
+      <a href="#contact"  class="nav__link">Contact</a>
     </div>
 
-    <!-- Custom Cursor -->
-    <div class="cursor" id="cursor"></div>
-    
-    <!-- Grid Background -->
-    <div class="grid-bg"></div>
-    
-    <!-- HUD Elements -->
-    <div class="hud-element hud-top-left">
-        STATUS: <span style="color: var(--neon-green);">ONLINE</span><br>
-        VERSION: 2.0.1<br>
-        UPTIME: <span id="uptime">00:00:00</span>
+    <div class="nav__controls">
+      <button id="theme-toggle"   class="nav__control-btn" aria-label="Toggle theme" title="Dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button id="mute-toggle"    class="nav__control-btn" aria-label="Toggle audio" title="Mute sounds">
+        <i class="fas fa-volume-low"></i>
+      </button>
     </div>
-    
-    <div class="hud-element hud-top-right">
-        COORDINATES: <span id="coordinates">0, 0</span><br>
-        FPS: <span id="fps">60</span><br>
-        PING: <span style="color: var(--neon-green);">12ms</span>
-    </div>
-    
-    <div class="hud-element hud-bottom-left">
-        SYSTEM: <span style="color: var(--neon-blue);">NEXUS OS</span><br>
-        USER: GUEST<br>
-        ACCESS: <span style="color: var(--neon-green);">GRANTED</span>
-    </div>
-    
-    <div class="hud-element hud-bottom-right">
-        TEMP: 72°F<br>
-        LOAD: <span style="color: var(--neon-green);">23%</span><br>
-        MEM: 8.2GB/16GB
-    </div>
-    
-    <!-- Navigation -->
-    <div class="nav">
-        <div class="nav-dot active" data-section="hero"></div>
-        <div class="nav-dot" data-section="about"></div>
-        <div class="nav-dot" data-section="skills"></div>
-        <div class="nav-dot" data-section="projects"></div>
-        <div class="nav-dot" data-section="education"></div>
-        <div class="nav-dot" data-section="achievements"></div>
-    </div>
-    
-    <!-- Hero Section -->
-    <section id="hero" class="section hero visible">
-        <div class="container">
-            <div class="hero-content" style="text-align: center;">
-                <h1 class="glitch">SIMON WEKESA</h1>
-                <div class="typing-text" id="typingText"></div>
-            </div>
-            <div class="">
-                <!-- <div class="gallery-info">
-                    <div>NEURAL GALLERY v2.1</div>
-                    <div style="color: var(--neon-blue); margin-top: 5px;">360° VIEW ENABLED</div>
-                </div> -->
-                <div class="swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide" style="background-image:url(./static/img/IMG-20250627-WA0007.jpg)">
-                            <div class="info">
-                            <span title="Image">Simon</span>
-                            <span title="Photo">...</span>
-                            <span title="Route">Juja</span>
-                            <span title="Sector">JKUAT</span>
-                            <span title="Zone">Graduation</span>
-                            </div>
-                        </div>
-                        <div class="swiper-slide" style="background-image:url(./static/img/IMG-20250627-WA0012.jpg)">
-                            <div class="info">
-                            <span title="Image">Simon</span>
-                            <span title="Photo">...</span>
-                            <span title="Route">Juja</span>
-                            <span title="Sector">JKUAT</span>
-                            <span title="Zone">Graduation</span>
-                            </div>
-                        </div>
-                        <div class="swiper-slide" style="background-image:url(./static/img/IMG_9493.JPG.jpg)">
-                            <div class="info">
-                            <span title="Image">Simon</span>
-                            <span title="Photo">...</span>
-                            <span title="Route">Juja</span>
-                            <span title="Sector">JKUAT</span>
-                            <span title="Zone">Graduation</span>
-                            </div>
-                        </div>
-                        <div class="swiper-slide" style="background-image:url(./static/img/model_car.jpg);filter: grayscale(50%) blur(10%) sepia(50%);">
-                            <div class="info">
-                            <span title="Image">DDD project</span>
-                            <span title="Photo">Simon</span>
-                            <span title="Route">Juja</span>
-                            <span title="Sector">JKUAT</span>
-                            <span title="Zone">Projects</span>
-                            </div>
-                        </div>
-                        <div class="swiper-slide" style="background-image:url(./static/img/ddd.jpg);filter: grayscale(50%)  blur(10%) sepia(50%);">
-                            <div class="info">
-                            <span title="Image">DDD project</span>
-                            <span title="Photo">Simon</span>
-                            <span title="Route">Juja</span>
-                            <span title="Sector">JKUAT</span>
-                            <span title="Zone">Projects</span>
-                            </div>
-                        </div>
-                        <div class="swiper-slide" style="background-image:url(./static/img/Snapchat-2072725520.jpg)">
-                            <div class="info">
-                            <span title="Image">Simon</span>
-                            <span title="Photo">...</span>
-                            <span title="Route">>></span>
-                            <span title="Sector">...</span>
-                            <span title="Zone">En Casa</span>
-                            </div>
-                        </div>
-                        <div class="swiper-slide" style="background-image:url(./static/img/Snapchat-532598692.jpg)">
-                            <div class="info">
-                            <span title="Image">Simon</span>
-                            <span title="Photo">...</span>
-                            <span title="Route">>></span>
-                            <span title="Sector">...</span>
-                            <span title="Zone">En Casa</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">ABOUT_ME.EXE</h2>
-            <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.2rem; line-height: 1.8;">
-                <p style="margin-bottom: 30px; color: rgba(255, 255, 255, 0.9);">
-                    Welcome to my digital realm. My name is Simon Wekesa Wafula, an engineer, programmer and generally a tech enthusiast.
-                    I'm a graduate from Jomo Kenyatta University of Technology and Agriculture majoring in Electronic and computer Engineering.
-                    I am proficient in various programming languages from Python, JavaScript, C++, C# to RUST.<br> Check out my github or LinkedIn to follow some of the projects i'm working on.
-                </p>
-                <p style="color: rgba(0, 243, 255, 0.8);margin-bottom: 30px;">
-                    My mission is to build systems that are not only edge-cutting but also helpful in people's lives. My projects should tell 
-                    a story of innovation, progress and human-centered design.
-                </p>
 
-                <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
-                    <p style="font-family: 'Orbitron', monospace;color: var(--neon-purple);">Contact: <a href="mailto:wekesawafula15@gmail.com" class="" style="color: var(--neon-green); font-family: 'Orbitron', monospace; font-size: 1.25rem;text-decoration: none;">wekesawafula15@gmail.com</a></p>
-                    <p style="font-family: 'Orbitron', monospace;color: var(--neon-purple);">LinkedIn: <a href="https://www.linkedin.com/in/simon-wekesa-81a1b3233/" class="" style="color: var(--neon-blue); font-family: 'Orbitron', monospace; font-size: 1.25rem;text-decoration: none;">Simon Wekesa</a></p>
-                    <p style="font-family: 'Orbitron', monospace;color: var(--neon-purple); margin-bottom: 10px;">Github: <a href="https://github.com/Simon0017" class="" style="color: var(--neon-pink); font-family: 'Orbitron', monospace; font-size: 1.25rem;text-decoration: none;">Simon0017</a></p>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-    
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">SKILLSET.JSON</h2>
-            <div class="skills-grid">
-                <div class="skill-card neon-border">
-                    <h3 style="color: var(--neon-blue); margin-bottom: 20px; font-family: 'Orbitron', monospace;">Frontend Technologies</h3>
-                    <div>
-                        <span>TAILWINDCSS</span>
-                        <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
-                    </div>
-                    <div>
-                        <span>JavaScript</span>
-                        <div class="skill-bar"><div class="skill-progress" data-width="65%"></div></div>
-                    </div>
-                    <div>
-                        <span>HTML5/CSS3/SASS</span>
-                        <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
-                    </div>
-                </div>
-                
-                <div class="skill-card neon-border">
-                    <h3 style="color: var(--neon-pink); margin-bottom: 20px; font-family: 'Orbitron', monospace;">Backend & Database</h3>
-                    <div>
-                        <span>Node.js</span>
-                        <div class="skill-bar"><div class="skill-progress" data-width="15%"></div></div>
-                    </div>
-                    <div>
-                        <span>Python/Django</span>
-                        <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
-                    </div>
-                    <div>
-                        <span>MongoDB/PostgreSQL</span>
-                        <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
-                    </div>
-                </div>
-                
-                <div class="skill-card neon-border">
-                    <h3 style="color: var(--neon-green); margin-bottom: 20px; font-family: 'Orbitron', monospace;">AI & Machine Learning</h3>
-                    <div>
-                        <span>TensorFlow/Keras</span>
-                        <div class="skill-bar"><div class="skill-progress" data-width="65%"></div></div>
-                    </div>
-                    <div>
-                        <span>Neural Networks</span>
-                        <div class="skill-bar"><div class="skill-progress" data-width="60%"></div></div>
-                    </div>
-                    <div>
-                        <span>Computer Vision</span>
-                        <div class="skill-bar"><div class="skill-progress" data-width="65%"></div></div>
-                    </div>
-                </div>
-                
-                <div class="skill-card neon-border">
-                    <h3 style="color: var(--neon-purple); margin-bottom: 20px; font-family: 'Orbitron', monospace;">CyberSecurity</h3>
-                    <div>
-                        <span>Penetration Testing</span>
-                        <div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div>
-                    </div>
-                    <div>
-                        <span>OSINT</span>
-                        <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
-                    </div>
-                    <div>
-                        <span>Incidence Reporting</span>
-                        <div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div>
-                    </div>
-                    <div>
-                        <span>Threat Intelligence</span>
-                        <div class="skill-bar"><div class="skill-progress" data-width="65%"></div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">PROJECTS.DIR</h2>
-            <div class="projects-grid">
-                <div class="project-card neon-border">
-                    <h3 style="margin-bottom: 15px;"><a style="text-decoration: none;color: var(--neon-blue); font-family: 'Orbitron', monospace; margin-bottom: 15px;" href="https://vestarealty.onrender.com/dashboard">Vesta Realty</a></h3>
-                    <p style="margin-bottom: 20px; color: rgba(255, 255, 255, 0.8);">
-                        Web application that enables real-estate owners and tenants to: access rental payment history, generate receipts ,raise and address  rent-related complaints, view balances and bill tenants.
-                    </p>
-                    <div style="margin: 0px 10px;"><a style="color: var(--neon-blue); font-family: 'Orbitron', monospace;font-size: 0.5;margin-top: 10px;" href="vesta_realty.html">See more</a></div><br>
-                    <div style="margin-bottom: 15px;display: flex;flex-wrap: wrap;">
-                        <span style="background: rgba(245, 164, 13, 0.829); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">HTML/CSS</span>
-                        <span style="background: rgba(255, 187, 0, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">JavaScript</span>
-                        <span style="background: rgba(255, 0, 110, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">Django</span>
-                        <span style="background: rgba(57, 255, 20, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">PostgreSQL</span>
-                    </div>
-                    <div style="color: var(--neon-green); font-family: 'Orbitron', monospace;">STATUS: DEPLOYED</div>
-                </div> 
-                
-                
-                <div class="project-card neon-border">
-                    <h3 style="color: var(--neon-pink); font-family: 'Orbitron', monospace; margin-bottom: 15px;">CampusVibes</h3>
-                    <p style="margin-bottom: 20px; color: rgba(255, 255, 255, 0.8);">
-                        Web application built on Django and various python and js libraries that aims to connect and stucturize student lives in campus. Its not all about work, there is socialzing and business also 
-                        integrated in this application. Comes with 3 applications ie the users,staff and the analytics. Fast,efficient and secure.
-                    </p>
-                    <div style="margin-bottom: 15px;display: flex;flex-wrap: wrap;gap: 4px;">
-                        <span style="background: rgba(191, 0, 255, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">Django</span>
-                        <span style="background: rgba(0, 243, 255, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">JavaScript</span>
-                        <span style="background: rgba(57, 255, 20, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">Celery</span>
-                        <span style="background: rgba(20, 255, 243, 0.856); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">PostgreSQL</span>
-                        <span style="background: rgba(179, 22, 165, 0.692); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">🔐 E2EE Encryption</span>
-                        <span style="background: rgba(31, 143, 218, 0.726); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">🎥 MediaSoup</span>
-                    </div>
-                    <div style="color: var(--neon-green); font-family: 'Orbitron', monospace;">STATUS: BETA RELEASE</div>
-                </div>
-                
-                <div class="project-card neon-border">
-                    <h3 style="color: var(--neon-green); font-family: 'Orbitron', monospace; margin-bottom: 15px;">Drowsy Driver Detection</h3>
-                    <p style="margin-bottom: 20px; color: rgba(255, 255, 255, 0.8);">
-                        AI (computer vision) powered project that seeks to address road accidents by detecting drowsiness in drivers
-                        via dashboard cams, ai models and relaying actions via multiple streams. 
-                    </p>
-                    <div style="margin: 0px 10px;"><a style="color: var(--neon-blue); font-family: 'Orbitron', monospace;font-size: 0.5;margin-top: 10px;" href="driver_drowsiness_detection.html">See more</a></div><br>
-                    <div style="margin-bottom: 15px;display: flex;flex-wrap: wrap;gap: 4px;">
-                        <span style="background: rgba(0, 243, 255, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">Keras</span>
-                        <span style="background: rgba(57, 255, 20, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">MediaPipe</span>
-                        <span style="background: rgba(48, 50, 206, 0.884); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">Opencv2</span>
-                        <span style="background: rgba(27, 5, 88, 0.397); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">ESP32</span>
-                        <span style="background: rgba(145, 19, 3, 0.692); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">Web Sockets</span>
-                    </div>
-                    <div style="color: var(--neon-green); font-family: 'Orbitron', monospace;">STATUS: PRESENTED</div>
-                </div>
-                
-                <div class="project-card neon-border">
-                    <h3 style="color: var(--neon-purple); font-family: 'Orbitron', monospace; margin-bottom: 15px;">ODIN Web Crawler</h3>
-                    <p style="margin-bottom: 20px; color: rgba(255, 255, 255, 0.8);">
-                        Powerful crawler powered and supported by python libraries ie: scrapy,beautifulSoup,requests that indexes websites on customers request.
-                    </p>
-                    <div style="margin-bottom: 15px;">
-                        <span style="background: rgba(191, 0, 255, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">Scrapy</span>
-                        <span style="background: rgba(0, 243, 255, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">Django</span>
-                        <span style="background: rgba(57, 255, 20, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">PostgreSQL </span>
-                    </div>
-                    <div style="color: var(--neon-green); font-family: 'Orbitron', monospace;">STATUS: PRE-ALPHA</div>
-                </div>
+    <button id="hamburger" class="nav__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-                <div class="project-card neon-border">
-                    <h3 style="color: var(--neon-green); font-family: 'Orbitron', monospace; margin-bottom: 15px;">Hephaestus Motor Inc</h3>
-                    <p style="margin-bottom: 20px; color: rgba(255, 255, 255, 0.8);">
-                        The Hephaestus Utility Billing System is a backend service for managing and visualizing power consumption data collected from meters.Built with Rust language
-                    </p>
-                    <div style="margin: 0px 10px;"><a style="color: var(--neon-blue); font-family: 'Orbitron', monospace;font-size: 0.5;margin-top: 10px;" href="hephaestus.html">See more</a></div><br>
-                    <div style="margin-bottom: 15px;display: flex;flex-wrap: wrap;gap: 4px;">
-                        <span style="background: rgba(191, 0, 255, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">Rust</span>
-                        <span style="background: rgba(0, 243, 255, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">Axum</span>
-                        <span style="background: rgba(57, 255, 20, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">PostgreSQL </span>
-                        <span style="background: rgba(0, 0, 0, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">SeaORM</span>
-                        <span style="background: rgba(54, 19, 134, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">Tera</span>
-                        <span style="background: rgba(206, 209, 15, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">Tower</span>
-                    </div>
-                    <div style="color: var(--neon-green); font-family: 'Orbitron', monospace;">STATUS: PRE-ALPHA</div>
-                </div>
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation">
+    <a href="#about"           class="mobile-nav__link">About</a>
+    <a href="#domains"         class="mobile-nav__link">Domains</a>
+    <a href="#stack"           class="mobile-nav__link">Stack</a>
+    <a href="#timeline-section"class="mobile-nav__link">Journey</a>
+    <a href="#projects"        class="mobile-nav__link">Projects</a>
+    <a href="#contact"         class="mobile-nav__link">Contact</a>
+  </div>
 
-                <div class="project-card neon-border">
-                    <h3 style="color: var(--neon-pink); font-family: 'Orbitron', monospace; margin-bottom: 15px;">OrionSense Hub</h3>
-                    <p style="margin-bottom: 20px; color: rgba(255, 255, 255, 0.8);">
-                        Think IOT and Django mixed together.This platform creates powerful api endpoints for your devices while organizing them into projects.
-                        It offfers authentication,authorization(permissions and throttling),user and project management,AI as a service,analytics,dahsboard plus much more.
-                    </p>
-                    <div style="margin-bottom: 15px;display: flex;flex-wrap: wrap;gap: 4px;">
-                        <span style="background: rgba(191, 0, 255, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">Django Rest Framework</span>
-                        <span style="background: rgba(0, 243, 255, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 10px;">Django</span>
-                        <span style="background: rgba(57, 255, 20, 0.2); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">Celery </span>
-                        <span style="background: rgba(59, 16, 95, 0.678); padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">Redis </span>
-                    </div>
-                    <div style="color: var(--neon-green); font-family: 'Orbitron', monospace;">STATUS: PRE-ALPHA</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Education Section -->
-    <section id="education" class="section">
-        <div class="container">
-            <h2 class="section-title">EDUCATION.LOG</h2>
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div class="skill-card neon-border" style="margin-bottom: 30px;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                        <div>
-                            <h3 style="color: var(--neon-blue); font-family: 'Orbitron', monospace;">BSc Electronic & Computer Engineering</h3>
-                            <p style="color: var(--neon-green); font-size: 1.1rem;">JKUAT - Jomo Kenyatta University of Agriculture & Technology </p>
-                        </div>
-                        <span style="color: rgba(255, 255, 255, 0.6); font-family: 'Orbitron', monospace;">2019-2025</span>
-                    </div>
-                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
-                        Completed a bachelors of science degree in Electronic and Computer Engineering. <br>Final Project: Driver drowsiness detection. 
-                        <br><strong style="color: var(--neon-green);">Honors: Second Class, Upper Division </strong>
-                    </p>
-                </div>
-                
-                <div class="skill-card neon-border" style="margin-bottom: 30px;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                        <div>
-                            <h3 style="color: var(--neon-pink); font-family: 'Orbitron', monospace;">Kenya Certificate of Secondary Education</h3>
-                            <p style="color: var(--neon-green); font-size: 1.1rem;">Alliance High School</p>
-                        </div>
-                        <span style="color: rgba(255, 255, 255, 0.6); font-family: 'Orbitron', monospace;">2015-2018</span>
-                    </div>
-                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
-                        Attended and Completed High School in Alliance High School, Kikuyu.
-                        <br><strong style="color: var(--neon-green);">A-</strong>
-                    </p>
-                </div>
-                
-                <!-- <div class="skill-card neon-border">
-                    <h3 style="color: var(--neon-purple); font-family: 'Orbitron', monospace; margin-bottom: 15px;">Certifications & Training</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-                        <div>
-                            <span style="color: var(--neon-blue);">▸</span> AWS Solutions Architect Professional
-                        </div>
-                        <div>
-                            <span style="color: var(--neon-blue);">▸</span> Certified Ethical Hacker (CEH)
-                        </div>
-                        <div>
-                            <span style="color: var(--neon-blue);">▸</span> Google Cloud AI/ML Specialist
-                        </div>
-                        <div>
-                            <span style="color: var(--neon-blue);">▸</span> CISSP Security Professional
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-    </section>
-    
-    <!-- Achievements Section -->
-    <section id="achievements" class="section">
-        <div class="container">
-            <h2 class="section-title">ACHIEVEMENTS.DB</h2>
-            <div style="text-align: center; max-width: 900px; margin: 0 auto;">
-                <div style="margin-bottom: 50px;">
-                    <h3 style="color: var(--neon-green); font-family: 'Orbitron', monospace; margin-bottom: 30px; font-size: 1.5rem;">Recognition & Awards</h3>
-                    <div class="achievement-badge">Cisco Introduction to CyberSecurity</div>
-                    <div class="achievement-badge">TryHackMe Offensive Security Intro</div>
-                    <div class="achievement-badge">TryHackMe Blue</div>
-                    <div class="achievement-badge">TryHackMe Vulnversity</div>
-                </div>
+  <!-- ============================================================
+       SIDE HUD INDICATORS
+       ============================================================ -->
+  <nav class="side-hud" aria-label="Section indicators">
+    <div class="side-hud__dot active" title="hero"      role="button" tabindex="0"></div>
+    <div class="side-hud__dot"        title="about"     role="button" tabindex="0"></div>
+    <div class="side-hud__dot"        title="domains"   role="button" tabindex="0"></div>
+    <div class="side-hud__dot"        title="stack"     role="button" tabindex="0"></div>
+    <div class="side-hud__dot"        title="timeline-section" role="button" tabindex="0"></div>
+    <div class="side-hud__dot"        title="projects"  role="button" tabindex="0"></div>
+    <div class="side-hud__dot"        title="contact"   role="button" tabindex="0"></div>
+  </nav>
 
-                <div style="margin-bottom: 50px;">
-                    <h3 style="color: var(--neon-blue); font-family: 'Orbitron', monospace; margin-bottom: 30px; font-size: 1.5rem;">Tech Stack</h3>
-                    <div class="achievement-badge">Python</div>
-                    <div class="achievement-badge">JavaScript</div>
-                    <div class="achievement-badge">Java</div>
-                    <div class="achievement-badge">C#</div>
-                    <div class="achievement-badge">Rust</div>
-                    <div class="achievement-badge">C++</div>
-                    <div class="achievement-badge">CSS</div>
-                    <div class="achievement-badge">Matlab</div>
-                    <div class="achievement-badge">Linux CLI</div>
-                    <div class="achievement-badge">HTML</div>
-                </div>
-                
-                <!-- <div style="margin-bottom: 50px;">
-                    <h3 style="color: var(--neon-pink); font-family: 'Orbitron', monospace; margin-bottom: 30px; font-size: 1.5rem;">Open Source Contributions</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
-                        <div class="skill-card">
-                            <h4 style="color: var(--neon-blue);">TensorFlow</h4>
-                            <p>Core contributor to ML optimization modules</p>
-                            <span style="color: var(--neon-green); font-family: 'Orbitron', monospace;">+2.4k commits</span>
-                        </div>
-                        <div class="skill-card">
-                            <h4 style="color: var(--neon-blue);">React</h4>
-                            <p>Performance optimization and accessibility features</p>
-                            <span style="color: var(--neon-green); font-family: 'Orbitron', monospace;">+1.8k commits</span>
-                        </div>
-                        <div class="skill-card">
-                            <h4 style="color: var(--neon-blue);">Node.js</h4>
-                            <p>Security patches and crypto module enhancements</p>
-                            <span style="color: var(--neon-green); font-family: 'Orbitron', monospace;">+967 commits</span>
-                        </div>
-                    </div>
-                </div> -->
-                
-                <div>
-                    <h3 style="color: var(--neon-purple); font-family: 'Orbitron', monospace; margin-bottom: 30px; font-size: 1.5rem;">Stats & Metrics</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
-                        <div class="neon-border" style="padding: 20px; text-align: center;">
-                            <div style="font-size: 2rem; color: var(--neon-green); font-family: 'Orbitron', monospace;">6</div>
-                            <div>Projects Completed</div>
-                        </div>
-                        <div class="neon-border" style="padding: 20px; text-align: center;">
-                            <div style="font-size: 2rem; color: var(--neon-blue); font-family: 'Orbitron', monospace;">30k+</div>
-                            <div>Lines of Code</div>
-                        </div>
-                        <div class="neon-border" style="padding: 20px; text-align: center;">
-                            <div style="font-size: 2rem; color: var(--neon-pink); font-family: 'Orbitron', monospace;">2</div>
-                            <div>Happy Clients</div>
-                        </div>
-                        <div class="neon-border" style="padding: 20px; text-align: center;">
-                            <div style="font-size: 2rem; color: var(--neon-purple); font-family: 'Orbitron', monospace;">24/7</div>
-                            <div>System Uptime</div>
-                        </div>
-                    </div>
-                </div>
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main>
+
+    <!-- ====================== HERO ====================== -->
+    <section id="hero" aria-label="Introduction">
+      <!-- Three.js canvas -->
+      <div id="hero-canvas" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero__content">
+
+          <!-- Left: text -->
+          <div class="hero__left">
+            <p class="hero__eyebrow">
+              <span id="availability-badge">Available</span>
+              &nbsp;·&nbsp; Electronics &amp; Computer Engineer
+            </p>
+
+            <h1 class="hero__name">
+              Simon
+              <span class="line2">Wekesa</span>
+            </h1>
+
+            <p class="hero__roles">
+              Backend Engineer
+              <span class="separator">/</span>
+              Embedded Systems
+              <span class="separator">/</span>
+              Cybersecurity
+            </p>
+
+            <p class="hero__bio">
+              Building systems that work in the real world — from IoT firmware on
+              constrained microcontrollers to cloud-deployed APIs and ML-driven pipelines.
+              Electronics &amp; Computer Engineering graduate with hands-on experience
+              shipping full-stack platforms, embedded prototypes, and security lab work.
+            </p>
+
+            <div class="hero__actions">
+              <a href="#projects" class="btn-hud">
+                <i class="fas fa-folder-open"></i> View Projects
+              </a>
+              <a href="#contact" class="btn-hud btn-hud--amber">
+                <i class="fas fa-terminal"></i> Open Channel
+              </a>
             </div>
+          </div>
+
+          <!-- Right: HUD panel with radar -->
+          <div class="hero__panel" aria-label="System status panel">
+            <div class="hero__panel__scan"></div>
+            <div class="hero__panel-title">// SYSTEM STATUS</div>
+
+            <!-- Stats injected by renderers.js -->
+            <div id="hero-stats-panel"></div>
+
+            <!-- Radar -->
+            <div class="hero__panel-radar">
+              <canvas id="radar-canvas" style="width:100%;height:100%;display:block;" aria-hidden="true"></canvas>
+            </div>
+          </div>
+
         </div>
+      </div>
+
+      <!-- Scroll CTA -->
+      <div class="scroll-cta" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-cta__line"></div>
+      </div>
     </section>
 
-    <!-- Audio elements for HUD sounds -->
-    <audio id="hoverSound" preload="auto">
-        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+Dtm2YeAzKH0e/PgS0EInLA7+OWRAoTVqzn77BdGAg+ltryxnkpBSl+zPLaizsIGGS57+OdTgwOUarm7LNiFgs8iM/v" type="audio/wav">
-    </audio>
-    
-    <audio id="clickSound" preload="auto">
-        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm1QIBAAAAABAAEAQBsAAEAbAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBji7cctSP4cVLZkJqoUtjy+R1QWWGwVTCQEuElgCdANKmJ4OmCq6GCVLRD1dAFg2DAYBEQISFqhZQkjfKI5M4Oo2AX" type="audio/wav">
-    </audio>
-    
+    <!-- ====================== ABOUT ====================== -->
+
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <div class="container">
+
+        <div class="section-header" data-reveal="fade">
+          <div class="section-header__id">// 01 — PROFILE</div>
+          <h2 class="section-header__title" id="about-heading">
+            Engineering <span class="accent">Profile</span>
+          </h2>
+          <div class="section-header__rule"></div>
+          <p class="section-header__sub">
+            Systems thinker. Backend pragmatist. Builder of things that run in the real world.
+          </p>
+        </div>
+
+        <div class="about__grid">
+          <!-- Bio text -->
+          <div>
+            <p data-reveal="slide-left">
+              Electronics and Computer Engineering graduate operating across backend
+              infrastructure, embedded hardware, and cybersecurity. I build things that
+              work at scale and under constraint — not just systems that demo well.
+            </p>
+            <p data-reveal="slide-left" data-delay="2">
+              Hands-on experience shipping production systems — from real-time WebRTC
+              communication platforms and cloud-deployed Django APIs to IoT firmware on
+              ESP32 microcontrollers and a structured penetration testing lab with SIEM
+              monitoring. Comfortable at every layer of the stack.
+            </p>
+            <p data-reveal="slide-left" data-delay="3">
+              I care about the fundamentals: clean data flows, hardware-software integration,
+              secure-by-design architecture, and systems that behave correctly when things
+              go wrong. Not just on a deadline, but at 3am on a Tuesday.
+            </p>
+
+            <div style="margin-top: var(--space-8);" data-reveal="fade" data-delay="4">
+              <div class="hud-label" style="margin-bottom: var(--space-4);">
+                CURRENT FOCUS
+              </div>
+              <p style="color: var(--text-secondary); font-size: var(--text-sm); line-height: 1.7;">
+                Deepening expertise in cybersecurity assurance, penetration testings, software development and electronic skills. 
+                Actively developing systems across multiple domains including EdPal, 
+                an intelligent education platform; NexCore, an AI-driven trading system with backtesting and paper trading; a real-time mediasoup-based communication system; 
+                CampusVibes, a social and LMS campus platform; and AetherNet, a Rust-based distributed communication system. Pursuing cybersecurity certifications while actively seeking work, collaborations, 
+                and engineering opportunities across software, embedded, and security domains.
+              </p>
+            </div>
+          </div>
+
+          <!-- Specs -->
+          <div>
+            <div id="about-specs" class="about__specs">
+              <!-- Injected by renderers.js -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================== DOMAINS ====================== -->
+    <section id="domains" class="section" aria-labelledby="domains-heading">
+      <div class="container">
+
+        <div class="section-header" data-reveal="fade">
+          <div class="section-header__id">// 02 — EXPERTISE</div>
+          <h2 class="section-header__title" id="domains-heading">
+            Engineering <span class="accent">Domains</span>
+          </h2>
+          <div class="section-header__rule"></div>
+          <p class="section-header__sub">
+            Six core engineering disciplines — each underpinned by production experience.
+          </p>
+        </div>
+
+        <!-- Injected by renderers.js -->
+        <div id="domains-grid" class="domains__grid" aria-label="Engineering domains"></div>
+
+      </div>
+    </section>
+
+    <!-- ====================== STACK ====================== -->
+    <section id="stack" class="section" aria-labelledby="stack-heading">
+      <div class="container">
+
+        <div class="section-header" data-reveal="fade">
+          <div class="section-header__id">// 03 — TECHNICAL STACK</div>
+          <h2 class="section-header__title" id="stack-heading">
+            Technology <span class="accent">Map</span>
+          </h2>
+          <div class="section-header__rule"></div>
+          <p class="section-header__sub">
+            An interactive node graph of the primary technologies, languages, and
+            platforms — hover to see connections.
+          </p>
+        </div>
+
+        <!-- Canvas2D stack visualization -->
+        <div class="stack__canvas-wrap" data-reveal="scale">
+          <div id="stack-canvas-container" style="position:absolute;inset:0;" aria-label="Interactive tech stack graph"></div>
+        </div>
+
+        <!-- Category legend — injected inline for simplicity -->
+        <div class="stack__legend" data-reveal="fade" style="margin-top: var(--space-8);">
+          <div class="stack__legend-item">
+            <div class="stack__legend-dot" style="background:#00C8FF;"></div>
+            <span class="stack__legend-label">Languages</span>
+          </div>
+          <div class="stack__legend-item">
+            <div class="stack__legend-dot" style="background:#F0A832;"></div>
+            <span class="stack__legend-label">Databases / Embedded</span>
+          </div>
+          <div class="stack__legend-item">
+            <div class="stack__legend-dot" style="background:#00E5A0;"></div>
+            <span class="stack__legend-label">Messaging</span>
+          </div>
+          <div class="stack__legend-item">
+            <div class="stack__legend-dot" style="background:#8B6FFF;"></div>
+            <span class="stack__legend-label">Infrastructure</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================== TIMELINE ====================== -->
+    <section id="timeline-section" class="section" aria-labelledby="timeline-heading">
+      <div class="container">
+
+        <div class="section-header" data-reveal="fade">
+          <div class="section-header__id">// 04 — ENGINEERING JOURNEY</div>
+          <h2 class="section-header__title" id="timeline-heading">
+            Mission <span class="accent">Log</span>
+          </h2>
+          <div class="section-header__rule"></div>
+          <p class="section-header__sub">
+            A chronological record of engineering milestones, roles, and deployments.
+            Click any node to open the full operational dossier.
+          </p>
+        </div>
+
+        <!-- Timeline — populated by timeline.js -->
+        <div class="timeline" aria-label="Career timeline">
+          <div class="timeline__spine" aria-hidden="true">
+            <div class="timeline__spine-fill"></div>
+          </div>
+          <div class="timeline__items" role="list"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================== PROJECTS ====================== -->
+    <section id="projects" class="section" aria-labelledby="projects-heading">
+      <div class="container">
+
+        <div class="section-header" data-reveal="fade">
+          <div class="section-header__id">// 05 — PROJECTS</div>
+          <h2 class="section-header__title" id="projects-heading">
+            System <span class="accent">Dossiers</span>
+          </h2>
+          <div class="section-header__rule"></div>
+          <p class="section-header__sub">
+            Click any project to open a full classified-file experience — architecture
+            diagrams, engineering decisions, metrics, and deployment pipelines.
+          </p>
+        </div>
+
+        <!-- Injected by renderers.js -->
+        <div id="projects-grid" class="projects__grid" aria-label="Project list"></div>
+
+      </div>
+    </section>
+
+    <!-- ====================== TERMINAL ====================== -->
+    <section id="terminal-section" class="section" aria-labelledby="terminal-heading">
+      <div class="container">
+
+        <div class="section-header" data-reveal="fade">
+          <div class="section-header__id">// 06 — SYSTEM DIAGNOSTICS</div>
+          <h2 class="section-header__title" id="terminal-heading">
+            Live <span class="accent">Telemetry</span>
+          </h2>
+          <div class="section-header__rule"></div>
+        </div>
+
+        <div data-reveal="scale">
+          <div class="terminal" role="region" aria-label="System telemetry terminal">
+            <div class="terminal__titlebar" aria-hidden="true">
+              <div class="terminal__dot terminal__dot--red"></div>
+              <div class="terminal__dot terminal__dot--amber"></div>
+              <div class="terminal__dot terminal__dot--green"></div>
+              <span class="terminal__title">systems.diagnostics — s.wekesa@prod</span>
+            </div>
+            <div class="terminal__body" id="terminal-output" aria-live="polite" aria-label="Terminal output">
+              <!-- Animated by terminal.js -->
+              <span class="terminal__line terminal__line--comment"># Connecting to production environment...</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================== CONTACT ====================== -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container">
+
+        <div class="section-header" data-reveal="fade">
+          <div class="section-header__id">// 07 — COMMUNICATIONS</div>
+          <h2 class="section-header__title" id="contact-heading">
+            Open <span class="accent">Channel</span>
+          </h2>
+          <div class="section-header__rule"></div>
+          <p class="section-header__sub">
+            Available for senior/staff engineering roles, technical consulting,
+            and system architecture discussions.
+          </p>
+        </div>
+
+        <div class="contact__grid">
+
+          <!-- Contact links — injected by renderers.js -->
+          <div>
+            <div id="contact-list"></div>
+          </div>
+
+          <!-- Availability panel -->
+          <div data-reveal="slide-right">
+            <div class="terminal">
+              <div class="terminal__titlebar" aria-hidden="true">
+                <div class="terminal__dot terminal__dot--red"></div>
+                <div class="terminal__dot terminal__dot--amber"></div>
+                <div class="terminal__dot terminal__dot--green"></div>
+                <span class="terminal__title">availability.status</span>
+              </div>
+              <div class="terminal__body">
+                <span class="terminal__line terminal__line--prompt">get /status</span>
+                <span class="terminal__line terminal__line--success">Status: OPEN_TO_OPPORTUNITIES</span>
+                <span class="terminal__line terminal__line--output">Role type:    Junior / Mid-level Engineering</span>
+                <span class="terminal__line terminal__line--output">Domain:       Backend · Embedded · AI · Infra</span>
+                <span class="terminal__line terminal__line--output">Location:     Nairobi/ Remote</span>
+                <span class="terminal__line terminal__line--output">Notice:       1 weeks</span>
+                <span class="terminal__line terminal__line--prompt">get /preferences</span>
+                <span class="terminal__line terminal__line--output">Hard problems: yes</span>
+                <span class="terminal__line terminal__line--output">Startups:      preferred</span>
+                <span class="terminal__line terminal__line--output">FAANG:         selective</span>
+                <span class="terminal__line terminal__line--success">Respond time:  &lt;24h</span>
+                <span class="terminal__cursor"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">
+          © <span class="year-dynamic">2024</span>
+          <span class="profile-name"> Simon Wafula Wekesa</span>
+          · Electronics & Computer Engineer
+        </p>
+        <nav class="footer__links" aria-label="Footer links">
+          <a href="#hero"     class="footer__link">Top</a>
+          <a href="#projects" class="footer__link">Projects</a>
+          <a href="#contact"  class="footer__link">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       INLINE SUPPLEMENTAL STYLES
+       (modal interior content, one-off overrides)
+       ============================================================ -->
+  <style>
+    /* Conical gradient polyfill for radar (no native support) */
+    #radar-canvas { border-radius: 50%; }
+
+    /* Hero panel scan line */
+    .hero__panel__scan {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+      opacity: 0;
+      animation: scanline 5s ease-in-out infinite;
+    }
+
+    /* Dossier scrollbar */
+    .dossier__main::-webkit-scrollbar,
+    .dossier__sidebar::-webkit-scrollbar { width: 3px; }
+    .dossier__main::-webkit-scrollbar-track,
+    .dossier__sidebar::-webkit-scrollbar-track { background: transparent; }
+    .dossier__main::-webkit-scrollbar-thumb,
+    .dossier__sidebar::-webkit-scrollbar-thumb {
+      background: var(--border-default);
+      border-radius: 2px;
+    }
+
+    /* Timeline item reveal */
+    .timeline-item {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+    }
+    .timeline-item.revealed {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Project card hover top accent */
+    .project-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--project-accent, var(--accent-cyan));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--dur-base) var(--ease-smooth);
+    }
+    .project-card:hover::after { transform: scaleX(1); }
+
+    /* Domain card per-type border pulse on hover */
+    .domain-card:hover {
+      box-shadow: 0 0 20px rgba(0,200,255,0.08), var(--shadow-md);
+    }
+  </style>
+
+  <!-- ============================================================
+       MAIN SCRIPT (ES modules)
+       ============================================================ -->
+  <script type="module" src="js/main.js"></script>
+
 </body>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="./static/js/portfolio.js"></script>
 </html>

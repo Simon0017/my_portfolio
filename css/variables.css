@@ -1,0 +1,127 @@
+/* ================================================================
+   VARIABLES.CSS — Design tokens for Engineering Portfolio
+   Theme: Futuristic command-center, cinematic HUD aesthetic
+   ================================================================ */
+
+:root {
+  /* === DARK MODE (default) === */
+  --bg-primary:        #0B0E14;
+  --bg-secondary:      #0F1319;
+  --bg-surface:        #141820;
+  --bg-elevated:       #1A2030;
+  --bg-overlay:        rgba(11, 14, 20, 0.92);
+
+  --text-primary:      #D8DDE8;
+  --text-secondary:    #8A94A8;
+  --text-muted:        #4A5568;
+  --text-inverse:      #0B0E14;
+  --text-accent:       #00C8FF;
+
+  --accent-cyan:       #00C8FF;
+  --accent-cyan-dim:   rgba(0, 200, 255, 0.15);
+  --accent-cyan-glow:  rgba(0, 200, 255, 0.4);
+  --accent-amber:      #F0A832;
+  --accent-amber-dim:  rgba(240, 168, 50, 0.12);
+  --accent-green:      #00E5A0;
+  --accent-green-dim:  rgba(0, 229, 160, 0.12);
+  --accent-red:        #FF4A6E;
+  --accent-red-dim:    rgba(255, 74, 110, 0.12);
+  --accent-purple:     #8B6FFF;
+
+  --border-subtle:     rgba(255, 255, 255, 0.05);
+  --border-default:    rgba(0, 200, 255, 0.15);
+  --border-active:     rgba(0, 200, 255, 0.5);
+
+  --hud-line:          rgba(0, 200, 255, 0.2);
+  --hud-corner:        rgba(0, 200, 255, 0.6);
+  --hud-scan:          rgba(0, 200, 255, 0.06);
+  --hud-glow:          0 0 20px rgba(0, 200, 255, 0.25);
+  --hud-glow-strong:   0 0 40px rgba(0, 200, 255, 0.4);
+
+  --shadow-sm:         0 2px 8px rgba(0,0,0,0.4);
+  --shadow-md:         0 4px 24px rgba(0,0,0,0.5);
+  --shadow-lg:         0 8px 48px rgba(0,0,0,0.6);
+  --shadow-hud:        0 0 30px rgba(0, 200, 255, 0.12), 0 4px 24px rgba(0,0,0,0.5);
+
+  --font-ui:           'Inter', 'Helvetica Neue', sans-serif;
+  --font-mono:         'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --font-display:      'Inter', sans-serif;
+
+  --text-xs:    clamp(0.65rem, 1.2vw, 0.7rem);
+  --text-sm:    clamp(0.75rem, 1.5vw, 0.8rem);
+  --text-base:  clamp(0.875rem, 2vw, 0.95rem);
+  --text-md:    clamp(1rem, 2.2vw, 1.05rem);
+  --text-lg:    clamp(1.1rem, 2.5vw, 1.2rem);
+  --text-xl:    clamp(1.2rem, 3vw, 1.4rem);
+  --text-2xl:   clamp(1.4rem, 3.5vw, 1.8rem);
+  --text-3xl:   clamp(1.8rem, 4.5vw, 2.4rem);
+  --text-4xl:   clamp(2.2rem, 5.5vw, 3.2rem);
+  --text-5xl:   clamp(2.8rem, 7vw, 4.5rem);
+  --text-hero:  clamp(3rem, 9vw, 7rem);
+
+  --space-1: 4px;  --space-2: 8px;   --space-3: 12px;
+  --space-4: 16px; --space-5: 20px;  --space-6: 24px;
+  --space-8: 32px; --space-10: 40px; --space-12: 48px;
+  --space-16: 64px;--space-20: 80px; --space-24: 96px;
+
+  --radius-sm:   3px;
+  --radius-md:   6px;
+  --radius-lg:   12px;
+  --radius-full: 9999px;
+
+  --header-h:    64px;
+  --sidebar-w:   280px;
+
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-sharp:  cubic-bezier(0.12, 0, 0.39, 0);
+  --ease-out:    cubic-bezier(0, 0, 0.2, 1);
+  --ease-hud:    cubic-bezier(0.16, 1, 0.3, 1);
+
+  --dur-instant: 80ms;
+  --dur-fast:    150ms;
+  --dur-base:    300ms;
+  --dur-slow:    500ms;
+  --dur-slower:  800ms;
+  --dur-cinematic: 1200ms;
+
+  --z-bg:      -1;
+  --z-base:     0;
+  --z-raised:   10;
+  --z-hud:      20;
+  --z-nav:      30;
+  --z-overlay:  40;
+  --z-modal:    50;
+  --z-top:      60;
+}
+
+/* === LIGHT MODE === */
+[data-theme="light"] {
+  --bg-primary:        #E8ECF2;
+  --bg-secondary:      #DDE3EC;
+  --bg-surface:        #D4DCE8;
+  --bg-elevated:       #C8D4E4;
+  --bg-overlay:        rgba(232, 236, 242, 0.94);
+
+  --text-primary:      #0F1420;
+  --text-secondary:    #2A3548;
+  --text-muted:        #5A6A80;
+  --text-inverse:      #E8ECF2;
+  --text-accent:       #0088BB;
+
+  --accent-cyan:       #0090C8;
+  --accent-cyan-dim:   rgba(0, 144, 200, 0.12);
+  --accent-cyan-glow:  rgba(0, 144, 200, 0.3);
+  --accent-amber:      #C07820;
+  --accent-green:      #008860;
+
+  --border-subtle:     rgba(0, 0, 0, 0.06);
+  --border-default:    rgba(0, 144, 200, 0.2);
+  --border-active:     rgba(0, 144, 200, 0.6);
+
+  --hud-line:          rgba(0, 144, 200, 0.2);
+  --hud-corner:        rgba(0, 144, 200, 0.7);
+  --hud-scan:          rgba(0, 144, 200, 0.04);
+  --hud-glow:          0 0 20px rgba(0, 144, 200, 0.15);
+  --shadow-hud:        0 0 30px rgba(0,144,200,0.08), 0 4px 24px rgba(0,0,0,0.1);
+}
