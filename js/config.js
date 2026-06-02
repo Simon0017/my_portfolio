@@ -50,7 +50,7 @@ export const DOMAINS = [
     icon: 'fa-solid fa-server',
     title: 'Backend Engineering',
     desc: 'API design, authentication flows, role-based access control, and data-driven application development. Experience building scalable platforms including LMS ecosystems, job recommendation engines, and billing systems.',
-    tags: ['Python', 'Django', 'Flask', 'Node.js', 'PostgreSQL', 'Redis'],
+    tags: ['Python', 'Django', 'Flask', 'Node.js', 'PostgreSQL', 'Redis', 'Rust','Axum','Tokio'],
     accent: '#00C8FF',
   },
   {
@@ -85,7 +85,7 @@ export const DOMAINS = [
     icon: 'fa-solid fa-cloud',
     title: 'Cloud & Distributed Systems',
     desc: 'Cloud application deployment and event-driven architecture design. Experience with AWS infrastructure, asynchronous messaging systems, caching layers, and scalable data processing pipelines.',
-    tags: ['AWS', 'Kafka', 'RabbitMQ', 'Redis', 'Elastic Beanstalk'],
+    tags: ['AWS', 'Kafka', 'RabbitMQ', 'Redis', 'Elastic Beanstalk','RabbitMQ'],
     accent: '#00C8FF',
   },
 ];
@@ -107,6 +107,7 @@ export const STACK_NODES = [
   { id: 'django',     label: 'Django',       category: 'infra',     x: 0.55, y: 0.8  },
   { id: 'wazuh',      label: 'Wazuh',        category: 'ai',        x: 0.5,  y: 0.45 },
   { id: 'esp32',      label: 'ESP32',        category: 'embedded',  x: 0.1,  y: 0.8  },
+  { id:'rabbitmq',    label: 'RabbitMQ',     category: 'messaging', x: 0.70, y: 0.85 }
 ];
 
 export const STACK_EDGES = [
@@ -122,6 +123,18 @@ export const STACK_EDGES = [
   ['python',     'aws'],
   ['sql',        'python'],
   ['cpp',        'python'],
+  ['rabbitmq',   'kafka'],
+  ['rabbitmq',   'redis'],
+  ['kafka',      'redis'],
+  ['django',     'kafka'],
+  ['rabbitmq',   'django'],
+  ['django', 'postgres'],
+  ['rust', 'aws'],
+  ['rust', 'kafka'],
+  ['javascript', 'python'],
+  ['django', 'redis'],
+  ['django', 'python'],
+  ['python', 'rabbitmq'],
 ];
 
 export const STACK_CATEGORIES = {
