@@ -12,7 +12,7 @@ export const PROFILE = {
   nameShort:  'S.WEKESA',
   title:      'Electronics & Computer Engineer',
   roles:      ['Backend Engineer', 'Embedded Systems Engineer', 'Cybersecurity Enthusiast'],
-  location:   'Kitale, Kenya',
+  location:   'Nairobi, Kenya',
   available:  true,
   bio: [
     'Electronics and Computer Engineering graduate with hands-on experience across backend development, embedded systems, and cybersecurity. Comfortable operating from microcontroller firmware all the way up to cloud-deployed distributed systems.',
@@ -29,7 +29,7 @@ export const PROFILE = {
   ],
   stats: [
     { label: 'Projects Shipped',    value: '5+',   color: '' },
-    { label: 'Cloud Deployments',   value: 'AWS, Vercel, Netlify',   color: 'amber' },
+    { label: 'Cloud Deployments',   value: 'AWS, Vercel, Netlify, Render',   color: 'amber' },
     { label: 'Languages',           value: '5',     color: 'green' },
     { label: 'Years Active',        value: '2',     color: '' },
   ],
@@ -50,7 +50,7 @@ export const DOMAINS = [
     icon: 'fa-solid fa-server',
     title: 'Backend Engineering',
     desc: 'API design, authentication flows, role-based access control, and data-driven application development. Experience building scalable platforms including LMS ecosystems, job recommendation engines, and billing systems.',
-    tags: ['Python', 'Django', 'Flask', 'Node.js', 'PostgreSQL', 'Redis', 'Rust','Axum','Tokio'],
+    tags: ['Python', 'Django', 'Flask', 'Node.js', 'ExpressJs', 'PostgreSQL', 'Redis', 'Rust','Axum','Tokio'],
     accent: '#00C8FF',
   },
   {
@@ -78,7 +78,7 @@ export const DOMAINS = [
     icon: 'fa-solid fa-satellite',
     title: 'Real-Time Communication',
     desc: 'WebRTC-based video communication platforms with SFU architecture, signaling server design, session management, and real-time data streaming for multi-user applications.',
-    tags: ['WebRTC', 'mediasoup', 'SFU', 'WebSockets', 'Node.js'],
+    tags: ['WebRTC', 'mediasoup', 'SFU', 'WebSockets', 'Node.js', "Socket.io", "Django Channels","Tokio"],
     accent: '#00E5A0',
   },
   {
@@ -94,47 +94,91 @@ export const DOMAINS = [
 // TECH STACK (for node visualization)
 // ============================================================
 
+
 export const STACK_NODES = [
-  { id: 'python',     label: 'Python',       category: 'language',  x: 0.2,  y: 0.3  },
-  { id: 'rust',       label: 'Rust',         category: 'language',  x: 0.35, y: 0.15 },
-  { id: 'javascript', label: 'JavaScript',   category: 'language',  x: 0.15, y: 0.55 },
-  { id: 'cpp',        label: 'C++',          category: 'language',  x: 0.28, y: 0.65 },
-  { id: 'sql',        label: 'SQL',          category: 'language',  x: 0.45, y: 0.75 },
-  { id: 'postgres',   label: 'PostgreSQL',   category: 'database',  x: 0.6,  y: 0.2  },
-  { id: 'redis',      label: 'Redis',        category: 'database',  x: 0.75, y: 0.35 },
-  { id: 'kafka',      label: 'Kafka',        category: 'messaging', x: 0.65, y: 0.55 },
-  { id: 'aws',        label: 'AWS',          category: 'infra',     x: 0.8,  y: 0.65 },
-  { id: 'django',     label: 'Django',       category: 'infra',     x: 0.55, y: 0.8  },
-  { id: 'wazuh',      label: 'Wazuh',        category: 'ai',        x: 0.5,  y: 0.45 },
-  { id: 'esp32',      label: 'ESP32',        category: 'embedded',  x: 0.1,  y: 0.8  },
-  { id:'rabbitmq',    label: 'RabbitMQ',     category: 'messaging', x: 0.70, y: 0.85 }
+  // --- Languages & Embedded (Left / Top-Left) ---
+  { id: 'python',      label: 'Python',        category: 'language',  x: 0.20, y: 0.35 },
+  { id: 'rust',        label: 'Rust',          category: 'language',  x: 0.20, y: 0.15 },
+  { id: 'javascript',  label: 'JavaScript',    category: 'language',  x: 0.10, y: 0.50 },
+  { id: 'cpp',         label: 'C++',           category: 'language',  x: 0.10, y: 0.70 },
+  { id: 'sql',         label: 'SQL',           category: 'language',  x: 0.35, y: 0.80 },
+  { id: 'esp32',       label: 'ESP32',         category: 'embedded',  x: 0.05, y: 0.85 },
+
+  // --- Runtimes, Frameworks & Core Libraries (Center-Left) ---
+  { id: 'tokio',       label: 'Tokio',         category: 'runtime',   x: 0.35, y: 0.15 },
+  { id: 'express',     label: 'Express',       category: 'infra',     x: 0.25, y: 0.52 },
+  { id: 'django',      label: 'Django',        category: 'infra',     x: 0.38, y: 0.40 },
+  { id: 'mediasoup',   label: 'Mediasoup',     category: 'media',     x: 0.25, y: 0.68 },
+
+  // --- Security & Networking (Center) ---
+  { id: 'wazuh',       label: 'Wazuh',         category: 'ai',        x: 0.45, y: 0.58 },
+  { id: 'cisco',       label: 'Cisco',         category: 'network',   x: 0.52, y: 0.72 },
+
+  // --- Messaging & Queueing (Center-Right) ---
+  { id: 'kafka',       label: 'Kafka',         category: 'messaging', x: 0.60, y: 0.45 },
+  { id: 'rabbitmq',    label: 'RabbitMQ',      category: 'messaging', x: 0.60, y: 0.30 },
+
+  // --- Databases & Storage (Right / Bottom-Right) ---
+  { id: 'postgres',    label: 'PostgreSQL',    category: 'database',  x: 0.75, y: 0.15 },
+  { id: 'timescaledb', label: 'TimescaleDB',   category: 'database',  x: 0.90, y: 0.15 },
+  { id: 'redis',       label: 'Redis',         category: 'database',  x: 0.78, y: 0.35 },
+  { id: 'mongodb',     label: 'MongoDB',       category: 'database',  x: 0.80, y: 0.55 },
+
+  // --- Cloud & Infra (Far Right) ---
+  { id: 'aws',         label: 'AWS',           category: 'infra',     x: 0.80, y: 0.75 }
 ];
 
 export const STACK_EDGES = [
+  // --- Existing Connections ---
   ['python',     'postgres'],
   ['python',     'redis'],
   ['python',     'kafka'],
+  ['python',     'aws'],
+  ['python',     'rabbitmq'],
   ['rust',       'python'],
-  ['javascript', 'wazuh'],
-  ['wazuh',      'kafka'],
+  ['rust',       'aws'],
+  ['rust',       'kafka'],
+  ['javascript', 'express'],
+  ['javascript', 'python'],
   ['cpp',        'esp32'],
+  ['cpp',        'python'],
+  ['sql',        'python'],
+  ['wazuh',      'kafka'],
   ['aws',        'kafka'],
   ['aws',        'django'],
-  ['python',     'aws'],
-  ['sql',        'python'],
-  ['cpp',        'python'],
   ['rabbitmq',   'kafka'],
   ['rabbitmq',   'redis'],
+  ['rabbitmq',   'django'],
   ['kafka',      'redis'],
   ['django',     'kafka'],
-  ['rabbitmq',   'django'],
-  ['django', 'postgres'],
-  ['rust', 'aws'],
-  ['rust', 'kafka'],
-  ['javascript', 'python'],
-  ['django', 'redis'],
-  ['django', 'python'],
-  ['python', 'rabbitmq'],
+  ['django',     'postgres'],
+  ['django',     'redis'],
+  ['django',     'python'],
+
+  // --- New Integrated Connections ---
+  // Tokio (Rust async runtime)
+  ['rust',       'tokio'],
+  ['tokio',      'mediasoup'],
+
+  // Mediasoup (WebRTC server built on C++ / Node)
+  ['javascript', 'mediasoup'],
+  ['cpp',        'mediasoup'],
+  ['express',    'mediasoup'],
+
+  // TimescaleDB (PostgreSQL extension for time-series data)
+  ['postgres',   'timescaledb'],
+  ['sql',        'timescaledb'],
+  ['python',     'timescaledb'],
+
+  // MongoDB (Document database)
+  ['express',    'mongodb'],
+  ['python',     'mongodb'],
+  ['aws',        'mongodb'],
+
+  // Cisco (Network & Infrastructure integration)
+  ['cisco',      'aws'],
+  ['cisco',      'wazuh'],
+  ['esp32',      'cisco']
 ];
 
 export const STACK_CATEGORIES = {
@@ -512,6 +556,151 @@ export const PROJECTS = [
 
   archType: 'rust-comms'
 },
+{
+  id:       'PROJ-006',
+  title:    'EdPal Learning Platform',
+  subtitle: 'Self Evaluation and Career Recommdation system',
+  desc:     'EdPal is a career guidance and self-assessment platform built for learners aged 12–18. It combines academic performance analysis with psychometric assessments to generate personalized career recommendations aligned with individual strengths, interests, and long-term aspirations. The assessment and recommendation framework is developed in collaboration with educators and education specialists throughout Kenya.',
+  accentBg: 'rgba(46,204,113,0.08)',
+  accent:   '#2ECC71',
+  tags: ['Python', 'Django', 'DRF', 'PostgreSQL', 'Redis', 'Celery', 'JavaScript'],
+
+  metrics: [
+    { label: 'Platform', value: 'Full Evaluation and Recommendation Ecosystem' },
+    { label: 'Architecture', value: 'Modular Django Apps' },
+    { label: 'Realtime', value: 'WebSockets' },
+    { label: 'Deployment', value: 'WSGI + Celery' },
+  ],
+
+  challenges: [
+    'Designing a robust scoring engine for academic and psychometric assessments',
+    'Developing a flexible evaluation engine capable of supporting multiple assessment methodologies',
+    'Building an intelligent recommendation engine that accurately maps learner profiles to suitable career pathways',
+    'Maintaining a modular application architecture to support independent feature development and scalability',
+    'Addressing data scarcity by integrating and validating information from trusted third-party educational resources',
+  ],
+
+  stack: [
+    { name: 'Python', role: 'Backend Language' },
+    { name: 'Django', role: 'Application Framework' },
+    { name: 'Django REST Framework', role: 'REST APIs' },
+    { name: 'PostgreSQL', role: 'Relational Database' },
+    { name: 'Redis', role: 'Caching & Message Broker' },
+    { name: 'Celery', role: 'Background Processing' },
+    { name: 'JavaScript', role: 'Frontend Interactivity' },
+  ],
+
+  pipeline: [
+    'User authentication & role validation',
+    'Course and academic resource management',
+    'Assignment creation & submissions',
+    'AI-assisted learning and recommendations',
+    'Career assessment & analytics engine',
+    'Real-time messaging & notifications',
+    'Background processing with Celery',
+    'Analytics & reporting dashboard',
+    'Institution administration & monitoring',
+    'Secure data persistence'
+  ],
+
+  archType: 'edpal'
+},
+{
+  id:       'PROJ-007',
+  title:    'NexStream',
+  subtitle: 'Real-Time Video Conferencing & Media Streaming Platform',
+  desc:     'A scalable Selective Forwarding Unit (SFU) platform enabling secure low-latency video conferencing, screen sharing, live collaboration, and media streaming using Mediasoup, WebRTC, Socket.IO, and Node.js.',
+  accentBg: 'rgba(52,152,219,0.08)',
+  accent:   '#3498DB',
+  tags: ['Node.js', 'Express', 'Socket.IO', 'Mediasoup', 'WebRTC', 'Redis', 'PostgreSQL'],
+
+  metrics: [
+    { label: 'Streaming', value: 'WebRTC SFU' },
+    { label: 'Architecture', value: 'Distributed Media Server' },
+    { label: 'Realtime', value: 'Socket.IO' },
+    { label: 'Media', value: 'Low Latency Video' },
+  ],
+
+  challenges: [
+    'Managing large-scale peer media routing using SFU architecture',
+    'Synchronizing signaling with media transport',
+    'Optimizing bandwidth using producer-consumer media streams',
+    'Handling reconnections, recording, and participant state management',
+  ],
+
+  stack: [
+    { name: 'Node.js', role: 'Backend Runtime' },
+    { name: 'Express', role: 'API Framework' },
+    { name: 'Mediasoup', role: 'Selective Forwarding Unit' },
+    { name: 'WebRTC', role: 'Media Transport' },
+    { name: 'Socket.IO', role: 'Realtime Signaling' },
+    { name: 'Redis', role: 'Shared Session Store' },
+    { name: 'PostgreSQL', role: 'Persistent Storage' },
+  ],
+
+  pipeline: [
+    'User authentication & room authorization',
+    'WebSocket signaling initialization',
+    'Router & transport creation',
+    'Producer media publishing',
+    'Consumer subscription management',
+    'Adaptive bitrate & media forwarding',
+    'Screen sharing & media synchronization',
+    'Recording & metadata storage',
+    'Participant monitoring',
+    'Session termination & cleanup'
+  ],
+
+  archType: 'mediasoup-sfu'
+},
+{
+  id:       'PROJ-008',
+  title:    'NexCore',
+  subtitle: 'AI-Driven Algorithmic Trading & Quantitative Research Platform',
+  desc:     'A quantitative trading platform for research, strategy development, backtesting, paper trading, and live execution. The system integrates machine learning models, financial analytics, risk management, and broker connectivity into a unified trading workflow.',
+  accentBg: 'rgba(255,140,0,0.08)',
+  accent:   '#FF8C00',
+  tags: ['Python', 'Django', 'NautilusTrader', 'Keras', 'LSTM', 'PostgreSQL', 'Celery', 'Redis','Kafka', 'Minio'],
+
+  metrics: [
+    { label: 'Trading', value: 'Algorithmic Platform' },
+    { label: 'Backtesting', value: 'NautilusTrader' },
+    { label: 'Analytics', value: 'AI & ML Models' },
+    { label: 'Execution', value: 'Paper / Live Trading' },
+  ],
+
+  challenges: [
+    'Building an end-to-end quantitative research workflow',
+    'Managing large volumes of historical market data efficiently',
+    'Designing reusable strategy interfaces for multiple trading models',
+    'Integrating machine learning predictions with risk management and execution',
+  ],
+
+  stack: [
+    { name: 'Python', role: 'Core Development' },
+    { name: 'Django', role: 'Web Platform' },
+    { name: 'NautilusTrader', role: 'Backtesting Engine' },
+    { name: 'Keras', role: 'Machine Learning' },
+    { name: 'PostgreSQL', role: 'Market Data Storage' },
+    { name: 'Redis', role: 'Caching & Task Queue' },
+    { name: 'Celery', role: 'Background Processing' },
+  ],
+
+  pipeline: [
+    'Historical market data ingestion',
+    'Data cleaning & normalization',
+    'Feature engineering',
+    'Strategy signal generation',
+    'Machine learning prediction',
+    'Risk management validation',
+    'Backtesting & performance evaluation',
+    'Paper trading simulation',
+    'Broker execution interface',
+    'Performance analytics & reporting'
+  ],
+
+  archType: 'quant-platform'
+},
 ];
 
 // ============================================================
@@ -519,28 +708,98 @@ export const PROJECTS = [
 // ============================================================
 
 export const TERMINAL_LINES = [
-  { type: 'comment',  text: '# simon.wekesa — systems init' },
-  { type: 'prompt',   text: 'systemctl status django-lms' },
-  { type: 'success',  text: 'Active: running — AWS Elastic Beanstalk — healthy' },
-  { type: 'prompt',   text: 'kubectl get pods -n production | grep webrtc' },
-  { type: 'output',   text: 'sfu-node-0   Running   1d  mediasoup — session active' },
-  { type: 'output',   text: 'sfu-node-1   Running   1d  mediasoup — session active' },
-  { type: 'prompt',   text: 'cat /var/log/wazuh/alerts.json | tail -4' },
-  { type: 'output',   text: 'Rule 5710 — SSH brute-force attempt detected' },
-  { type: 'output',   text: 'Source: 192.168.56.101 (Kali attacker)' },
-  { type: 'output',   text: 'Target: 192.168.56.103 (vulnerable host)' },
-  { type: 'success',  text: 'SIEM alert logged — incident analysis in progress' },
-  { type: 'prompt',   text: 'python recommend.py --candidate simon --top 5' },
-  { type: 'output',   text: 'Embedding candidate profile... BERT (384-dim)' },
-  { type: 'output',   text: 'Scoring 1,240 listings via cosine similarity' },
-  { type: 'success',  text: 'Top match: Backend Engineer — similarity: 0.94' },
-  { type: 'prompt',   text: 'esptool.py flash_id --port /dev/ttyUSB0' },
-  { type: 'output',   text: 'Chip: ESP32-D0WDQ6 — Flash: 4MB' },
-  { type: 'output',   text: 'Drowsiness model: loaded — stream active at 15fps' },
-  { type: 'success',  text: 'Eye aspect ratio: 0.31 — alert state: AWAKE' },
-  { type: 'prompt',   text: 'grep "P99" /var/log/api/metrics.log | tail -2' },
-  { type: 'output',   text: '[09:14:01] P99: 210ms — endpoint: /api/recommend/' },
-  { type: 'output',   text: '[09:14:31] P99: 198ms — endpoint: /api/recommend/' },
+  { type: 'comment', text: '# Simon Wekesa — Engineering Workspace' },
+
+  // Git
+  { type: 'prompt', text: 'git status' },
+  { type: 'output', text: 'On branch main' },
+  { type: 'output', text: 'Working tree clean ✓' },
+
+  { type: 'prompt', text: 'git log --oneline -3' },
+  { type: 'output', text: 'a18c42f feat(auth): migrate Node server to Auth.js' },
+  { type: 'output', text: '91ef0da feat(sfu): optimize mediasoup transport routing' },
+  { type: 'output', text: '7b1a6d3 feat(edpal): improve recommendation scoring engine' },
+
+  // EdPal
+  { type: 'prompt', text: 'python manage.py runserver' },
+  { type: 'success', text: 'EdPal LMS running → http://127.0.0.1:8000/' },
+
+  { type: 'prompt', text: 'celery -A edpal inspect active' },
+  { type: 'output', text: '3 workers online — recommendation queue healthy' },
+
+  { type: 'prompt', text: 'python manage.py careers:evaluate --student=1024' },
+  { type: 'output', text: 'Academic score.............91%' },
+  { type: 'output', text: 'Psychometric profile.......Analytical / Creative' },
+  { type: 'success', text: 'Recommended pathway → Software Engineering (0.96)' },
+
+  // NexStream
+  { type: 'prompt', text: 'docker compose ps nexstream' },
+  { type: 'output', text: 'express-api     healthy' },
+  { type: 'output', text: 'mediasoup-sfu   healthy' },
+  { type: 'output', text: 'redis           healthy' },
+
+  { type: 'prompt', text: 'curl localhost:3000/api/status' },
+  { type: 'success', text: 'Active rooms: 28 | Participants: 147 | Avg latency: 32ms' },
+
+  // NexCore
+  { type: 'prompt', text: 'python backtest.py --strategy lstm_breakout' },
+  { type: 'output', text: 'Loading 2 years of OHLCV market data...' },
+  { type: 'output', text: 'Training PyTorch LSTM model...' },
+  { type: 'output', text: 'Running NautilusTrader backtest...' },
+  { type: 'success', text: 'Sharpe: 2.14 | Max DD: 6.8% | Win Rate: 63.4%' },
+
+  // Rust
+  { type: 'prompt', text: 'cargo test --release' },
+  { type: 'success', text: 'AetherNet → 94 tests passed (0 failed)' },
+
+  // Auth.js
+  { type: 'prompt', text: 'npm run dev' },
+  { type: 'output', text: 'Express server listening on :3000' },
+  { type: 'output', text: 'Auth.js initialized ✓ JWT strategy active' },
+
+  // Database
+  { type: 'prompt', text: 'psql -c "SELECT COUNT(*) FROM users;"' },
+  { type: 'output', text: 'users: 18,472' },
+
+  { type: 'prompt', text: 'redis-cli INFO memory | grep used_memory_human' },
+  { type: 'output', text: 'used_memory_human:182.6M' },
+
+  // DevOps
+  { type: 'prompt', text: 'kubectl get pods -n production' },
+  { type: 'output', text: 'edpal-api-6fc88      Running' },
+  { type: 'output', text: 'nexstream-sfu-0      Running' },
+  { type: 'output', text: 'postgres-primary     Running' },
+  { type: 'output', text: 'redis-master         Running' },
+
+  // Security
+  { type: 'prompt', text: 'tail -3 /var/ossec/logs/alerts/alerts.log' },
+  { type: 'output', text: '[HIGH] SSH brute-force blocked' },
+  { type: 'output', text: 'Attacker: 192.168.56.101 (Kali Linux)' },
+  { type: 'success', text: 'Wazuh active response executed successfully' },
+
+  // Embedded
+  { type: 'prompt', text: 'esptool.py flash_id --port /dev/ttyUSB0' },
+  { type: 'output', text: 'ESP32 detected — Flash 4MB' },
+
+  { type: 'prompt', text: 'python drowsiness_detector.py' },
+  { type: 'output', text: 'Camera initialized @ 30 FPS' },
+  { type: 'output', text: 'EAR = 0.312' },
+  { type: 'success', text: 'Driver Status → AWAKE' },
+
+  // AI
+  { type: 'prompt', text: 'python embeddings.py' },
+  { type: 'output', text: 'SentenceTransformer loaded (all-MiniLM-L6-v2)' },
+  { type: 'output', text: 'Generating 1,240 embeddings...' },
+  { type: 'success', text: 'Vector index updated successfully' },
+
+  // Deployment
+  { type: 'prompt', text: 'git push origin main' },
+  { type: 'output', text: 'GitHub Actions pipeline started...' },
+  { type: 'output', text: 'Running tests...' },
+  { type: 'output', text: 'Deploying to production...' },
+  { type: 'success', text: 'Deployment completed ✓ Zero downtime' },
+
+  { type: 'comment', text: '# Ready for the next challenge.' }
 ];
 
 // ============================================================

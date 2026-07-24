@@ -31,6 +31,9 @@ export function drawArchDiagram(canvas, type) {
   else if (type === 'job-sys') drawJobSystem(ctx, w, h, isDark);
   else if (type === 'cyber-sec') drawCyberSec(ctx, w, h, isDark);
   else if (type === 'rust-comms') drawAetherNet(ctx, w, h, isDark);
+  else if (type === 'edpal') drawEdPal(ctx, w, h, isDark);
+  else if (type === 'mediasoup-sfu') drawNexStream(ctx, w, h, isDark);
+  else if (type === 'quant-platform') drawNexCore(ctx, w, h, isDark);
   else drawEmbedded(ctx, w, h, isDark);
 }
 
@@ -494,4 +497,136 @@ function label(ctx, x, y, text, isDark) {
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   ctx.fillText(text, x, y);
+}
+
+// edpal
+function drawEdPal(ctx, w, h, isDark) {
+  const green = '#2ECC71';
+  const blue  = '#3498DB';
+  const amber = '#F39C12';
+
+  const col1 = w * 0.18;
+  const col2 = w * 0.50;
+  const col3 = w * 0.82;
+
+  // User Layer
+  box(ctx, col1, h*0.18, 95, 30, 'Learners', 'Students', blue, isDark);
+  box(ctx, col1, h*0.38, 95, 30, 'Assessments', 'Academic + Psychometric', blue, isDark);
+  box(ctx, col1, h*0.58, 95, 30, 'Educators', 'Assessment Authors', blue, isDark);
+  box(ctx, col1, h*0.78, 95, 30, 'Institution', 'Schools', blue, isDark);
+
+  // Core
+  box(ctx, col2, h*0.28, 110, 36, 'Evaluation Engine', 'Assessment Processing', green, isDark);
+  box(ctx, col2, h*0.50, 110, 36, 'Scoring Engine', 'Academic + Psychometric', green, isDark);
+  box(ctx, col2, h*0.72, 110, 36, 'Recommendation Engine', 'Career Matching', green, isDark);
+
+  // Services
+  box(ctx, col3, h*0.18, 95, 30, 'Career DB', 'Career Knowledge', amber, isDark);
+  box(ctx, col3, h*0.38, 95, 30, 'Analytics', 'Learner Insights', amber, isDark);
+  box(ctx, col3, h*0.58, 95, 30, 'Reports', 'Recommendations', amber, isDark);
+  box(ctx, col3, h*0.78, 95, 30, 'PostgreSQL', 'Persistent Storage', amber, isDark);
+
+  // Left → Core
+  arrow(ctx,col1+48,h*.18,col2-55,h*.28,blue,'');
+  arrow(ctx,col1+48,h*.38,col2-55,h*.28,blue,'');
+  arrow(ctx,col1+48,h*.58,col2-55,h*.50,blue,'');
+  arrow(ctx,col1+48,h*.78,col2-55,h*.72,blue,'');
+
+  // Core Flow
+  arrow(ctx,col2+55,h*.30,col2+55,h*.50,green,'');
+  arrow(ctx,col2+55,h*.52,col2+55,h*.72,green,'');
+
+  // Core → Right
+  arrow(ctx,col2+55,h*.28,col3-50,h*.18,amber,'');
+  arrow(ctx,col2+55,h*.42,col3-50,h*.38,amber,'');
+  arrow(ctx,col2+55,h*.56,col3-50,h*.58,amber,'');
+  arrow(ctx,col2+55,h*.72,col3-50,h*.78,amber,'');
+
+  label(ctx,col2,h*.93,'EdPal — Career Recommendation & Evaluation Platform',isDark);
+}
+
+// nexcore
+function drawNexCore(ctx, w, h, isDark) {
+  const orange = '#F39C12';
+  const green  = '#2ECC71';
+  const blue   = '#3498DB';
+
+  const col1 = w * 0.18;
+  const col2 = w * 0.50;
+  const col3 = w * 0.82;
+
+  // Inputs
+  box(ctx,col1,h*.18,95,30,'Market Data','Historical + Live',orange,isDark);
+  box(ctx,col1,h*.38,95,30,'Strategies','Trading Logic',orange,isDark);
+  box(ctx,col1,h*.58,95,30,'ML Models','Predictions',orange,isDark);
+  box(ctx,col1,h*.78,95,30,'Risk Rules','Portfolio Limits',orange,isDark);
+
+  // Core
+  box(ctx,col2,h*.30,110,36,'Research Engine','Feature Pipeline',green,isDark);
+  box(ctx,col2,h*.52,110,36,'Backtest Engine','NautilusTrader',green,isDark);
+  box(ctx,col2,h*.74,110,36,'Execution Engine','Paper / Live',green,isDark);
+
+  // Outputs
+  box(ctx,col3,h*.18,95,30,'Performance','Analytics',blue,isDark);
+  box(ctx,col3,h*.38,95,30,'PostgreSQL','Market Storage',blue,isDark);
+  box(ctx,col3,h*.58,95,30,'Broker API','IBKR / Alpaca',blue,isDark);
+  box(ctx,col3,h*.78,95,30,'Dashboard','Monitoring',blue,isDark);
+
+  arrow(ctx,col1+48,h*.18,col2-55,h*.30,orange,'');
+  arrow(ctx,col1+48,h*.38,col2-55,h*.52,orange,'');
+  arrow(ctx,col1+48,h*.58,col2-55,h*.52,orange,'');
+  arrow(ctx,col1+48,h*.78,col2-55,h*.74,orange,'');
+
+  arrow(ctx,col2+55,h*.32,col2+55,h*.52,green,'');
+  arrow(ctx,col2+55,h*.52,col2+55,h*.74,green,'');
+
+  arrow(ctx,col2+55,h*.30,col3-50,h*.18,blue,'');
+  arrow(ctx,col2+55,h*.40,col3-50,h*.38,blue,'');
+  arrow(ctx,col2+55,h*.55,col3-50,h*.58,blue,'');
+  arrow(ctx,col2+55,h*.74,col3-50,h*.78,blue,'');
+
+  label(ctx,col2,h*.93,'NexCore — AI Quantitative Trading Platform',isDark);
+}
+
+// nexstream
+function drawNexStream(ctx, w, h, isDark) {
+  const blue   = '#3498DB';
+  const green  = '#2ECC71';
+  const purple = '#9B59B6';
+
+  const col1 = w * 0.18;
+  const col2 = w * 0.50;
+  const col3 = w * 0.82;
+
+  // Clients
+  box(ctx,col1,h*.18,95,30,'Participants','Browser / Mobile',blue,isDark);
+  box(ctx,col1,h*.38,95,30,'WebRTC','Media Streams',blue,isDark);
+  box(ctx,col1,h*.58,95,30,'Socket.IO','Signalling',blue,isDark);
+  box(ctx,col1,h*.78,95,30,'Authentication','JWT',blue,isDark);
+
+  // SFU
+  box(ctx,col2,h*.30,110,36,'Express API','REST + Auth',green,isDark);
+  box(ctx,col2,h*.52,110,36,'Mediasoup SFU','Routers + Workers',green,isDark);
+  box(ctx,col2,h*.74,110,36,'Session Manager','Rooms & Participants',green,isDark);
+
+  // Backend
+  box(ctx,col3,h*.18,95,30,'Recording','Media Storage',purple,isDark);
+  box(ctx,col3,h*.38,95,30,'Redis','Session Cache',purple,isDark);
+  box(ctx,col3,h*.58,95,30,'PostgreSQL','Metadata',purple,isDark);
+  box(ctx,col3,h*.78,95,30,'Monitoring','Logs',purple,isDark);
+
+  arrow(ctx,col1+48,h*.18,col2-55,h*.30,blue,'');
+  arrow(ctx,col1+48,h*.38,col2-55,h*.52,blue,'');
+  arrow(ctx,col1+48,h*.58,col2-55,h*.52,blue,'');
+  arrow(ctx,col1+48,h*.78,col2-55,h*.30,blue,'');
+
+  arrow(ctx,col2+55,h*.32,col2+55,h*.52,green,'');
+  arrow(ctx,col2+55,h*.52,col2+55,h*.74,green,'');
+
+  arrow(ctx,col2+55,h*.30,col3-50,h*.18,purple,'');
+  arrow(ctx,col2+55,h*.40,col3-50,h*.38,purple,'');
+  arrow(ctx,col2+55,h*.55,col3-50,h*.58,purple,'');
+  arrow(ctx,col2+55,h*.74,col3-50,h*.78,purple,'');
+
+  label(ctx,col2,h*.93,'NexStream — Mediasoup SFU Video Conferencing Platform',isDark);
 }
